@@ -363,19 +363,24 @@ header{
 }
 #impact-section{
   background-color: #012041;
+  padding: 40px 80px;
+}
+.impact-container{
+  text-align: center;
+background-color: #012041;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
-  padding: 40px 80px;
+  padding: 10px 0px;
 }
-#impact-section div{
-  text-align: center;
-  background: transparent;
-  padding: 40px 10px 40px 10px;
-  cursor: pointer;
-  background:
-  linear-gradient(var(--main-color), #408500)
-  right / 1px calc(100% - 40px) no-repeat
+
+.impact-tte{
+      margin-bottom: 20px;
+    text-align: center;
+    color: var(--main-color);
+    font-size: var(--bigger-font);
+    letter-spacing: 2px;
+    font-family: var(--font-2);
 }
 .impact h1{
   text-transform: uppercase;
@@ -384,6 +389,9 @@ header{
   font-size: clamp(24px, 6vw, 26px);
   letter-spacing: 2px;
   font-family: var(--font-2);
+}
+.impact h1 i{
+  font-size: 3rem;
 }
 .impact p{
   color: #ffffff;
