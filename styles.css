@@ -4,6 +4,7 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    scroll-behavior: smooth;
 }
 :root{
     --bigger-font: clamp(28px, 6vw, 30px);
@@ -268,8 +269,14 @@ header{
     justify-content: center;
     background-color: var(--another-color);
 }
+.after-section h1{
+  color: #fff;
+  font-family: var(--font-2);
+  letter-spacing: 2px;
+  font-size: var(--bigger-font);
+}
 .cta-buttonn{
-    margin: 0 90px;
+    margin: 0 40px;
     color: var(--main-color);
     font-size: var(--bigger-font);
     padding: 10px;
@@ -375,9 +382,9 @@ background-color: #012041;
 }
 
 .impact-tte{
-      margin-bottom: 20px;
+    margin-bottom: 30px;
     text-align: center;
-    color: var(--main-color);
+    color: #ffffff;
     font-size: var(--bigger-font);
     letter-spacing: 2px;
     font-family: var(--font-2);
@@ -391,7 +398,7 @@ background-color: #012041;
   font-family: var(--font-2);
 }
 .impact h1 i{
-  font-size: 3rem;
+  font-size: 2.7rem;
 }
 .impact p{
   color: #ffffff;
