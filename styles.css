@@ -5,6 +5,7 @@
     list-style: none;
     text-decoration: none;
     scroll-behavior: smooth;
+    scrollbar-color: #408500 #012041;
 }
 :root{
     --bigger-font: clamp(28px, 6vw, 30px);
@@ -38,6 +39,7 @@ header{
 }
 .header-1 h1{
     font-weight: 700;
+    font-size: var(--big-font);
     
 }
 .header-1 a{
@@ -248,12 +250,14 @@ header{
     color: #012041;
 }
 .bio {
+  font-weight: 900;
   background: linear-gradient(180deg, #9aeb4e, #2f6101);
   -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .strength {
+  font-weight: 900;
     background: linear-gradient(180deg, #2c7ed6, #012041);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -734,10 +738,28 @@ background-color: #012041;
     }
 }
 @media (max-width: 500px) {
-  .hero-text-container{
-    padding: 100px 20px 140px 20px;
+  .header-1{
+    padding: 10px 4px;
   }
-
+  .header-2{
+    padding: 10px 20px;
+  }
+  .header-3{
+    padding: 2px 10px;
+    font-size: var(--normal-font);
+  }
+  .hero-text-container{
+    padding: 100px 20px 100px 20px;
+  }
+  .scroll-down i{
+    font-size: 4rem;
+  }
+   .after-section{
+      padding: 30px 10px;
+    }
+    .after-section h1{
+      font-size: var(--big-font);
+    }
    #about-section{
     padding: 80px 20px 40px 20px;
 }
@@ -746,19 +768,16 @@ background-color: #012041;
     font-size: var(--big-font);
     font-family: var(--font-2);
 }
-
+  #impact-section{
+    padding: 70px 10px;
+  }
     .categories {
        padding: 40px 5%;
     }
     .category-grid{
         padding-bottom: 10px;
     }
-    .after-section{
-      padding: 10px;
-    }
-    .after-section h1{
-      font-size: var(--big-font);
-    }
+   
     .cta-buttonn{
       margin: 7px;
       padding: 4px;
