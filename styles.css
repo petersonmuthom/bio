@@ -6,6 +6,9 @@
     text-decoration: none;
     scroll-behavior: smooth;
     scrollbar-color: #408500 #012041;
+      -webkit-tap-highlight-color: transparent;
+    -webkit-focus-ring-color: transparent;
+    outline: none; 
 }
 :root{
     --bigger-font: clamp(28px, 6vw, 30px);
@@ -227,7 +230,7 @@ header{
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    filter: grayscale(70%);
+
 }
 #hero-section{
    padding: 200px 0 0 0;
@@ -677,6 +680,27 @@ background-color: #012041;
   text-decoration: none;
   font-size: 14px;
 }
+.biostrength-logo-2{
+    font-size: clamp(27px, 4vw, 34px);
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+.bio-2 {
+  background: linear-gradient(180deg, #9aeb4e, #2f6101);
+  -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.strength-2 {
+    background: linear-gradient(180deg, #2c7ed6, #012041);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.footer-col img{
+  height: 70px;
+  max-width: 100%;
+}
+
 .footer-col a:hover {
   text-decoration: underline;
   color: var(--main-color);
