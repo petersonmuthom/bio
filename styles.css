@@ -68,14 +68,15 @@ header{
     justify-content: space-between;
 }
 .logo img {
-    height: 70px;
-    width: auto;
+    height: 50px; 
+    max-width: 100%;
 }
 .header-cta {
     display: flex;
     align-items: center;
     left: 200px;
     gap: 16px;
+    flex-wrap: wrap;
 }
 .cta-txt {
     color: #ffffff;
@@ -86,11 +87,13 @@ header{
 .cta-btn {
   color: var(--main-color);
   border: 2px solid var(--main-color);
-  padding: 10px 18px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 12px;
   transition: all 0.3s ease;
+
+   padding: 8px 12px;
+    font-size: 12px;
 }
 .cta-btn:hover {
   background-color: var(--main-color);
@@ -301,7 +304,7 @@ header{
     text-align: center;
     font-weight: 700;
     letter-spacing: 2px;
-    font-size: clamp(24px, 4vw, 26px);
+    font-size: clamp(20px, 4vw, 26px);
     font-family: var(--font-2);
 }
 #about-section a{
@@ -721,4 +724,66 @@ background-color: #012041;
     margin: 0 10px;
     color: #fff;
     font-size: clamp(18px, 2.5vw, 27px);
+}
+@media(max-width:800px){
+    .contacts-inputs{
+        width: 80vw;
+    }
+    .contact-right{
+        display: none;
+    }
+}
+@media (max-width: 500px) {
+  .hero-text-container{
+    padding: 100px 20px 140px 20px;
+  }
+
+   #about-section{
+    padding: 80px 20px 40px 20px;
+}
+.abt-txt{
+    letter-spacing: 2px;
+    font-size: var(--big-font);
+    font-family: var(--font-2);
+}
+
+    .categories {
+       padding: 40px 5%;
+    }
+    .category-grid{
+        padding-bottom: 10px;
+    }
+    .after-section{
+      padding: 10px;
+    }
+    .after-section h1{
+      font-size: var(--big-font);
+    }
+    .cta-buttonn{
+      margin: 7px;
+      padding: 4px;
+      font-size: var(--big-font);
+    }
+    #programs{
+        padding: 40px 30px;
+    }
+    #team{
+        padding: 40px 0px;
+    }
+    .team-grid{
+        padding: 20px 20px;
+    }
+    .team-grid img{
+        height: 290px;
+        width: 70%;
+    }
+    #contact-section{
+      padding: 40px 20px;
+    }
+}
+@media (max-width: 380px) {
+    .team-grid img{
+        height: 200px;
+        width: 60%;
+    }
 }
