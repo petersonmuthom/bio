@@ -105,86 +105,98 @@ header{
   color: #000;
   border: 1px solid #408500;
 }
-.header-3{
-    padding: 0 80px;
-    width: 100%;
-    background-color: #012041;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.705);
-}
-.nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-}
-.nav-links {
-    font-family: var(--font-2);
-  display: flex;
-  list-style: none;
-  gap: 32px;
-}
-.nav-links li {
-  position: relative;
-}
-.nav-links a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 14px;
-  letter-spacing: 1px;
-  padding: 20px 0;
-  display: inline-block;
-}
-.nav-links a:hover {
-  color: #408500;
-}
-.nav-links .active a {
-  border-bottom: 3px solid #408500;
-}
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  color: #ffffff;
-  font-size: 14px;
-}
 
-.lang {
-  font-size: var(--big-font);
-  font-family: var(--font-2);
-  color: #000;
-  font-weight: 700;
-  background-color: #2f6101;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-.dropdown-menu {
-  position: absolute;
-  top: 60px;
-  left: 0;
+
+
+
+.topnav {
+  overflow: hidden;
   background-color: #012041;
-  width: 260px;
-  display: none;
-  flex-direction: column;
-  z-index: 999;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.849);
-}
-.dropdown:hover .dropdown-menu {
-  display: flex;
-}
-.dropdown-menu a {
-  padding: 12px 18px;
-  font-size: 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-  color: #ffffff;
+  font-family: var(--font-2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.795);
+  padding: 0 40px;
 }
 
-.dropdown-menu a:hover {
-  color: #ffffff;
-  background-color: #408500;
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
 }
-.dropdown-menu a:last-child {
-  border-bottom: none;
+.active {
+
+  color: white;
 }
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+
+  
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #012041;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.973);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 40px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.topnav a.icon i{
+  font-size: 27px;
+  margin-top: -10px;
+}
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: var(--main-color);
+  color: white;
+}
+.topnav a.icon:hover {
+  background-color: transparent;
+}
+.dropdown-content a:hover {
+  background-color: #2f6101;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+
+
 .whatsapp-float {
     position: fixed;
     bottom: clamp(0px, 30vw, 20px);
@@ -240,27 +252,25 @@ header{
 }
 .biostrength-logo {
     font-family: "Arial Black", "Montserrat", sans-serif;
-    font-size: clamp(48px, 8vw, 96px);
-    font-weight: 500;
+    font-size: clamp(60px, 10vw, 70px);
+    font-weight: 900;
     letter-spacing: -3px;
 }
 .hero-p{
     font-size: var(--bigger-font);
     font-family: var(--font-2);
-    font-weight: 800;
-  max-width: 700px;
+    font-weight: 900;
+    max-width: 700px;
     text-align: left;
     color: #012041;
 }
 .bio {
-  font-weight: 900;
   background: linear-gradient(180deg, #9aeb4e, #2f6101);
   -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .strength {
-  font-weight: 900;
     background: linear-gradient(180deg, #2c7ed6, #012041);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -738,7 +748,7 @@ background-color: #012041;
 .footer-social {
     font-family: var(--font-family);
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 400;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -761,16 +771,76 @@ background-color: #012041;
         display: none;
     }
 }
+
+
+
+@media screen and (max-width: 600px) {
+  .logo img {
+    height: 58px; 
+    max-width: 100%;
+}
+  .active{
+    border-bottom: none;
+  }
+  .header-2{
+    padding: 10px 0px;
+  }
+ .header-cta{
+  gap: 5px;
+ }
+ .cta-btn {
+  padding: 4px 8px;
+ }
+  .topnav{
+    padding: 4px 10px;
+  }
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+    border-bottom: none;
+  }
+  .biostrength-logo{
+    font-size: clamp(38px, 8vw, 48px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+
+
+
+
+
+
+
+
 @media (max-width: 500px) {
   .header-1{
     display: none;
   }
   .header-2{
     padding: 30px 20px;
-  }
-  .header-3{
-    padding: 2px 10px;
-    font-size: var(--normal-font);
   }
   .hero-text-container{
     padding: 40px 20px 100px 20px;
@@ -824,9 +894,4 @@ background-color: #012041;
       padding: 40px 20px;
     }
 }
-@media (max-width: 380px) {
-    .team-grid img{
-        height: 200px;
-        width: 60%;
-    }
-}
+
