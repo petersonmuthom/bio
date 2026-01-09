@@ -252,7 +252,7 @@ header{
 }
 .biostrength-logo {
     font-family: "Arial Black", "Montserrat", sans-serif;
-    font-size: clamp(60px, 10vw, 70px);
+    font-size: clamp(70px, 10vw, 80px);
     font-weight: 900;
     letter-spacing: -3px;
 }
@@ -778,7 +778,7 @@ background-color: #012041;
   .logo img {
     height: 58px; 
     max-width: 100%;
-}
+  }
   .active{
     border-bottom: none;
   }
@@ -856,12 +856,12 @@ background-color: #012041;
     }
    #about-section{
     padding: 40px 20px 40px 20px;
-}
-.abt-txt{
+  }
+  .abt-txt{
     letter-spacing: 2px;
     font-size: var(--big-font);
     font-family: var(--font-2);
-}
+  }
   #impact-section{
     padding: 70px 10px;
   }
