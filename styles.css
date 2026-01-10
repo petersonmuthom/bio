@@ -309,7 +309,7 @@ header{
     padding: 80px 100px 100px 100px;
 }
 .abt-tte{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     text-align: center;
     color: #011730;
     font-size: clamp(28px, 6vw, 30px);
@@ -318,7 +318,7 @@ header{
 }
 .abt-txt{
     color: #000000bb;
-    text-align: center;
+    text-align: left;
     font-weight: 700;
     letter-spacing: 2px;
     font-size: clamp(20px, 4vw, 23px);
