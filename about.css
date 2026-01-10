@@ -226,10 +226,10 @@ header{
 }
 .abt-txt{
     color: #000000bb;
-    text-align: center;
+    text-align: left;
     font-weight: 700;
     letter-spacing: 2px;
-    padding: 0 30px;
+    padding: 0 0px;
     margin: 10px auto;
     font-size: clamp(17px, 4vw, 20px);
     font-family: var(--font-2);
