@@ -535,23 +535,23 @@ background-color: #012041;
     font-family: var(--font-2);
 }
 .team-card img {
-    width: 100%;
-    max-width: 220px;
-    height: 260px;
-    display: block;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  max-width: 220px;
+  height: 260px;
+  display: block;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
 }
 .team-card-2 img {
-    width: 70%;
-    height: 300px;
-    object-fit: cover;
+  width: 70%;
+  height: 300px;
+  object-fit: cover;
 }
 .team-card-3 img {
-    width: 70%;
-    height: 300px;
-    object-fit: cover;
+  width: 70%;
+  height: 300px;
+  object-fit: cover;
 }
 .btn-link{
   display: flex;
@@ -774,12 +774,10 @@ background-color: #012041;
     .contacts-inputs{
         width: 80vw;
     }
-    .contact-right{
+  .contact-right{
         display: none;
-    }
+  }
 }
-
-
 
 @media screen and (max-width: 600px) {
   .logo img {
