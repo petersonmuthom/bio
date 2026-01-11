@@ -137,8 +137,6 @@ header{
 .dropdown {
   float: left;
   overflow: hidden;
-
-  
 }
 
 .dropdown .dropbtn {
@@ -200,20 +198,20 @@ header{
 
 
 #about-section{
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin: auto;
-    background-color: rgba(245, 245, 245, 0.884);
-    padding: 200px 100px 40px 100px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: auto;
+  background-color: rgba(245, 245, 245, 0.884);
+  padding: 200px 100px 40px 100px;
 }
 .abt-tte{
-    margin-bottom: 30px;
-    text-align: center;
-    color: #011730;
-    font-size: clamp(28px, 6vw, 30px);
-    letter-spacing: 2px;
-    font-family: var(--font-2);
+  margin-bottom: 30px;
+  text-align: center;
+  color: #011730;
+  font-size: clamp(28px, 6vw, 30px);
+  letter-spacing: 2px;
+  font-family: var(--font-2);
 }
 #about-section img{
   margin: 0 auto 70px auto;
@@ -225,14 +223,14 @@ header{
   display: block;
 }
 .abt-txt{
-    color: #000000bb;
-    text-align: left;
-    font-weight: 700;
-    letter-spacing: 2px;
-    padding: 0 0px;
-    margin: 20px auto;
-    font-size: clamp(17px, 4vw, 20px);
-    font-family: var(--font-2);
+  color: #000000bb;
+  text-align: left;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 0 0px;
+  margin: 20px auto;
+  font-size: clamp(17px, 4vw, 20px);
+  font-family: var(--font-2);
 }
 
 
@@ -246,7 +244,7 @@ header{
   font-family: Arial, sans-serif;
 }
 .footer-top{
-    display: grid;
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 40px;
   border-bottom: 1px solid rgba(255,255,255,0.15);
@@ -268,9 +266,9 @@ header{
 
 }
 .footer-col ul {
-    font-family: var(--font-2);
-    font-weight: 400;
-    font-size: var(--normal-font);
+  font-family: var(--font-2);
+  font-weight: 400;
+  font-size: var(--normal-font);
   list-style: none;
   padding: 0;
 }
@@ -283,20 +281,18 @@ header{
   font-size: 14px;
 }
 .biostrength-logo-2{
-    font-size: clamp(27px, 4vw, 34px);
-    font-weight: 900;
-    letter-spacing: 3px;
+  font-size: clamp(27px, 4vw, 34px);
+  font-weight: 900;
+  letter-spacing: 3px;
 }
 .bio-2 {
-  background: linear-gradient(180deg, #9aeb4e, #2f6101);
-  -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(180deg, #9aeb4e, #2f6101); 
+  -webkit-background-clip: text;-webkit-text-fill-color: transparent;
 }
 
 .strength-2 {
     background: linear-gradient(180deg, #2c7ed6, #012041);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;-webkit-text-fill-color: transparent;
 }
 .footer-col img{
   height: 70px;
@@ -335,28 +331,26 @@ header{
   margin: 0 6px;
 }
 .footer-legal span {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 .footer-social {
-    font-family: var(--font-family);
-    font-size: 14px;
-    font-weight: 400;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 .footer-social a {
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
 }
 .footer-social a i {
-    margin: 0 10px;
-    color: #fff;
-    font-size: clamp(18px, 2.5vw, 27px);
+  margin: 0 10px;
+  color: #fff;
+  font-size: clamp(18px, 2.5vw, 27px);
 }
-
-
 
 @media(max-width:1000px){
   #about-section{
