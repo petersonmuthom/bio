@@ -863,6 +863,9 @@ background-color: #012041;
     padding: 40px 20px 40px 20px;
   }
   .abt-txt{
+    text-align: left;
+  }
+  .abt-txt{
     letter-spacing: 2px;
     font-size: var(--big-font);
     font-family: var(--font-2);
