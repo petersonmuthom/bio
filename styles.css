@@ -862,7 +862,7 @@ background-color: #012041;
    #about-section{
     padding: 40px 20px 40px 20px;
   }
-  .abt-txt{
+  .abt-tte{
     text-align: left;
   }
   .abt-txt{
@@ -876,10 +876,11 @@ background-color: #012041;
     .categories {
        padding: 40px 5%;
     }
+ 
     .category-grid{
         padding-bottom: 10px;
     }
-   
+    
     .cta-buttonn{
       margin: 7px;
       padding: 4px;
