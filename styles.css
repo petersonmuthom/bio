@@ -27,9 +27,8 @@ header{
     z-index: 1000;
 }
 .header-1{
-
+  padding: 4px 0;
     font-family: sans-serif;
-    height: 44px;
     text-align: center;
     align-items: center;
     margin: 0 auto;
@@ -46,12 +45,13 @@ header{
     
 }
 .header-1 a{
+  border-radius: 6px;
     border: 3px solid #000;
     color: #000;
     margin-left: 20px;
     font-size: var(--big-font);
     font-weight: 700;
-    padding: 4px;
+    padding: 2px;
 }
 .header-2{
     display: flex;
@@ -91,6 +91,7 @@ header{
 }
 .cta-btn {
   color: var(--main-color);
+  border-radius: 6px;
   border: 2px solid var(--main-color);
   text-decoration: none;
   font-weight: 700;
@@ -328,6 +329,7 @@ header{
   display: flex;
   padding: 10px 20px;
   font-weight: 700;
+  border-radius: 6px;
   color: #000;
   text-align: center;
   width: 170px;
@@ -359,6 +361,7 @@ header{
 .category-card {
     border: 1px solid #00000034;
     background: #fff;
+    border-radius: 10px;
     padding: 30px 20px 30px 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.096);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -444,11 +447,13 @@ background-color: #012041;
     gap: 20px;
 }
 .p-card{
+  border-radius: 4px;
     background: #dadada;
     display: flex;
     flex-direction: column;
 }
 .p-card img{
+    border-radius: 6px 6px 0 0;
     width: 100%;
     height: 260px;
     object-fit: cover;
@@ -469,6 +474,7 @@ background-color: #012041;
     flex-grow: 1;
 }
 .p-card .cta{
+  border-radius: 6px;
     align-content: center;
     align-items: center;
     text-align: center;
@@ -511,8 +517,9 @@ background-color: #012041;
     gap: 40px;
 }
 .team-card  {
+   border-radius: 6px;
     background: whitesmoke;
-    padding: 30px 10px;
+    padding: 20px 10px;
     text-align: center;
 }
 .team-card-2{
@@ -534,9 +541,10 @@ background-color: #012041;
     font-family: var(--font-2);
 }
 .team-card img {
+  border-radius: 6px;
   width: 100%;
   max-width: 220px;
-  height: 260px;
+  height: auto;
   display: block;
   margin: 0 auto;
   align-items: center;
@@ -553,6 +561,7 @@ background-color: #012041;
   object-fit: cover;
 }
 .btn-link{
+  border-radius: 6px;
   display: flex;
   padding: 10px 20px;
   font-weight: 700;
@@ -611,6 +620,7 @@ background-color: #012041;
     margin-bottom: 20px;
 }
 .contacts-inputs{
+  border-radius: 6px;
     width: 400px;
     height: 50px;
     border: none;
@@ -632,6 +642,7 @@ background-color: #012041;
     color: #003062;
 }
 .contact-left button{
+  border-radius: 6px;
   font-family: var(--font-2);
     display: flex;
     align-items: center;
