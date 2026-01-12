@@ -431,10 +431,10 @@ background-color: #012041;
 }
 #programs{
     background-color: whitesmoke;
-    padding: 60px 5%;
+    padding: 30px 5%;
 }
 #programs h1{
-    margin-bottom: 30px;
+  margin-top: 70px;
     text-align: center;
     color: #011730;
     font-size: var(--bigger-font);
@@ -443,6 +443,7 @@ background-color: #012041;
 }
 .p-grid{
     display: grid;
+    padding-top: 80px;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
 }
@@ -491,7 +492,7 @@ background-color: #012041;
     transition: background 0.3s ease;
 }
 #team{
-    padding: 60px 30px;
+    padding: 20px 30px 60px 30px;
     background-color: #ffffff;
 }
 #team-tte{
@@ -511,14 +512,14 @@ background-color: #012041;
   font-family: var(--font-2);
 }
 .team-grid {
-    padding: 20px 0px;
+    padding: 70px 0px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 40px;
 }
 .team-card  {
    border-radius: 6px;
-    background: whitesmoke;
+    background: #dadada;
     padding: 20px 10px;
     text-align: center;
 }
@@ -533,7 +534,7 @@ background-color: #012041;
     text-align: center;
 }
 #hero-names{
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-align: center;
     color: #011730;
     font-size: var(--bigger-font);
@@ -546,7 +547,7 @@ background-color: #012041;
   max-width: 220px;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   align-items: center;
   justify-content: center;
 }
@@ -620,6 +621,7 @@ background-color: #012041;
     margin-bottom: 20px;
 }
 .contacts-inputs{
+  background-color: #dadada;
   border-radius: 6px;
     width: 400px;
     height: 50px;
