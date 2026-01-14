@@ -214,7 +214,7 @@ header{
   font-family: var(--font-2);
 }
 #about-section img{
-  margin: 0 auto 70px auto;
+  margin: 0 auto 30px auto;
   align-items: center;
   justify-content: center;
   width: 100%;

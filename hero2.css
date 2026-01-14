@@ -207,6 +207,7 @@ header{
     font-family: var(--font-2);
 }
 #about-section img{
+  border-radius: 6px;
     width: 100%;
     max-width: 220px;
     height: auto;
