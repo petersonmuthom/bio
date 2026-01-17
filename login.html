@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -33,6 +33,7 @@
       }
       body {
         padding-top: 70px;
+        padding-bottom: 170px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -41,7 +42,7 @@
       .login-container {
         margin: 0 auto;
         background: #fff;
-        padding: 30px 40px 20px 40px;
+        padding: 30px 40px 90px 40px;
         border-radius: 8px;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         width: 400px;
@@ -109,7 +110,20 @@
       .login-container button:hover {
         background: #024b8c;
       }
-
+      .login-container p span {
+        letter-spacing: -0px;
+        line-height: 4px;
+        text-align: left;
+        margin-top: 10px;
+        padding-bottom: 40px;
+        font-size: 12px;
+        color: rgb(75, 75, 75);
+        text-decoration: none;
+        font-weight: 400;
+      }
+      .login-container p a:hover {
+        text-decoration: underline 1px #408500;
+      }
       .error {
         color: red;
         font-size: 18px;
@@ -147,6 +161,12 @@
         Don't have an account?
         <a href="signup.html" class="register-link">Register</a>
       </p>
+      <p>
+        <span>
+          Please read our<a href="privacypolicy.html"> Privacy Policy</a> to
+          learn how we use your personal data.</span
+        >
+      </p>
     </div>
 
     <script>
@@ -183,7 +203,7 @@
             const user = userCredential.user;
             messageDiv.innerHTML = `<p class='success'>Welcome, ${
               user.displayName || "User"
-            }! Redirecting...</p>`;
+            }! </p>`;
             setTimeout(() => {
               window.location.href = "lms.html"; // Redirect after login
             }, 1500);
