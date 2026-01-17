@@ -989,6 +989,12 @@ background-color: #012041;
     .stats-container{
       margin: 0px 0;
     }
+    .stats-container i{
+  margin-bottom: -20px;
+  color: var(--main-color);
+  font-size: 2rem;
+
+}
     .count-darcual{
       margin-top: 0px;
     }
