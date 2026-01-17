@@ -8,6 +8,14 @@
 
     <script src="https://kit.fontawesome.com/3fe66e6a4e.js" crossorigin="anonymous"></script>
 
+    <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<!-- FirebaseUI -->
+<script src="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.js"></script>
+<link rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.css" />
+
 </head>
 <body>
     <header>
@@ -54,6 +62,7 @@
                     <a href="#"><i class="fa-solid fa-angle-right"></i> WEBSITE ACCESSIBILITY</a>
                 </div>
             </div> 
+            <div class="login-btn-modal"><a href="login.html">LOGIN</a></div>
         </div>
 
 
@@ -192,19 +201,19 @@
                     <img src="images/p-card.jpeg" alt="">
                     <span class="tag"></span>
                     <h3>Supporting Clinical Trials Through Strong Lab Systems....</h3>
-                    <a href="#" class="cta">JOIN WEBINER <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="signup.html" class="cta">JOIN WEBINER <i class="fa-solid fa-arrow-right"></i></a>
                 </article>
                 <article class="p-card">
                     <img src="images/WhatsApp Image 2025-12-27 at 09.32.32.jpeg" alt="">
                     <span class="tag"></span>
                     <h3>Meeting Global Standards in Laboratory Practice....</h3>
-                    <a href="#" class="cta">JOIN WEBINER <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="signup.html" class="cta">JOIN WEBINER <i class="fa-solid fa-arrow-right"></i></a>
                 </article>
                 <article class="p-card">
                     <img src="images/webinar-2.jpeg" alt="">
                     <span class="tag"></span>
                     <h3>Practical Skills for Sustainable Laboratory Systems....</h3>
-                    <a href="#" class="cta">JOIN WEBINER <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="signup.html" class="cta">JOIN WEBINER <i class="fa-solid fa-arrow-right"></i></a>
                 </article>
             </div>
         </section>
@@ -322,4 +331,38 @@
     <script src="scripts.js"></script>
     <a href="https://wa.me/+254722430383" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 </body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDJ87n0P3DOd5QsDYfjaGoO0hbaAZr_Mc8",
+    authDomain: "bio-37ae0.firebaseapp.com",
+    projectId: "bio-37ae0",
+    storageBucket: "bio-37ae0.firebasestorage.app",
+    messagingSenderId: "72501818145",
+    appId: "1:72501818145:web:fc466e47e697b7c31e8460",
+    measurementId: "G-CEHP8RNB9W"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+<script>
+  const ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+  ui.start('#firebaseui-auth-container', {
+    signInOptions: [
+      firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID
+    ],
+    signInSuccessUrl: "dashboard.html"
+  });
+</script>
 </html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biostrength: Registration.</title>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+        scroll-behavior: smooth;
+        scrollbar-color: #408500 #012041;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-focus-ring-color: transparent;
+        outline: none;
+      }
+      :root {
+        --bigger-font: clamp(28px, 6vw, 30px);
+        --big-font: clamp(14px, 2vw, 18px);
+        --normal-font: clamp(8px, 1vw, 10px);
+        --font-family: "BBH Bogle", sans-serif;
+        --font-2: "Ubuntu", sans-serif;
+        --main-color: #408500;
+        --another-color: #003062;
+      }
+      body {
+        padding-top: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .signup-container {
+        margin: 0 auto;
+        background: #fff;
+        padding: 30px 40px 20px 40px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        width: 400px;
+      }
+      .signup-container img {
+        height: 120px;
+        max-width: 100%;
+      }
+      .signup-container h2 {
+        font-family: var(--font-2);
+        font-size: var(--bigger-font);
+        color: #012041;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .signup-container input {
+        font-size: var(--big-font);
+        width: 100%;
+        padding: 14px;
+        margin: auto auto 30px auto;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      .signup-container button {
+        width: 100%;
+        padding: 14px;
+        background: #012041;
+        color: white;
+        font-size: var(--big-font);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .signup-container input:hover {
+        border: 1px solid var(--main-color);
+      }
+      .signup-container p {
+        color: #012041;
+        font-size: 18px;
+        font-family: var(--font-2);
+        font-weight: 600;
+        margin: 15px 0px 10px;
+      }
+      .signup-container p a {
+        text-align: center;
+        color: #408500;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .signup-container button:hover {
+        width: 100%;
+        padding: 14px;
+        background: #012041;
+        color: white;
+        font-size: var(--big-font);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .signup-container p span {
+        letter-spacing: -0px;
+        line-height: 4px;
+        text-align: left;
+        margin-top: 10px;
+        font-size: 12px;
+        color: rgb(75, 75, 75);
+        text-decoration: none;
+        font-weight: 400;
+      }
+      .signup-container p a:hover {
+        text-decoration: underline 1px #408500;
+      }
+      .error {
+        color: red;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .success {
+        color: green;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      @media (max-width: 500px) {
+        body {
+          padding: 0px 0px 0 0px;
+        }
+        .signup-container {
+          padding: 20px 30px 30px 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="signup-container">
+      <img src="images/biostrength logo.jpeg" alt="" />
+      <h2>Register an account.</h2>
+      <div id="message"></div>
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button id="signupBtn">Register</button>
+      <p>
+        Already have an account?
+        <a href="login.html" class="register-link">Login</a>
+      </p>
+      <p>
+        <span>
+          By registering, you agree to the Biostrength<a href="">
+            Terms of Service</a
+          >. Please read our<a href="privacypolicy.html"> Privacy Policy</a> to
+          learn how we use your personal data.</span
+        >
+      </p>
+    </div>
+
+    <script>
+      // 1️⃣ Firebase Config & Init
+      const firebaseConfig = {
+        apiKey: "AIzaSyDJ87n0P3DOd5QsDYfjaGoO0hbaAZr_Mc8",
+        authDomain: "bio-37ae0.firebaseapp.com",
+        projectId: "bio-37ae0",
+        storageBucket: "bio-37ae0.appspot.com",
+        messagingSenderId: "72501818145",
+        appId: "1:72501818145:web:fc466e47e697b7c31e8460",
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      // 2️⃣ Grab elements
+      const signupBtn = document.getElementById("signupBtn");
+      const messageDiv = document.getElementById("message");
+
+      // 3️⃣ Sign Up function
+      signupBtn.addEventListener("click", () => {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        if (!name || !email || !password) {
+          messageDiv.innerHTML =
+            "<p class='error'>All fields are required.</p>";
+          return;
+        }
+
+        // Firebase create user
+        firebase
+          .auth()
+          .createUserWithEmailAndPassword(email, password)
+          .then((userCredential) => {
+            // Update profile with name
+            return userCredential.user.updateProfile({ displayName: name });
+          })
+          .then(() => {
+            messageDiv.innerHTML =
+              "<p class='success'>Sign Up Successful! Redirecting...</p>";
+            setTimeout(() => {
+              window.location.href = "lms.html"; // Redirect after signup
+            }, 1500);
+          })
+          .catch((error) => {
+            messageDiv.innerHTML = `<p class='error'>${error.message}</p>`;
+          });
+      });
+    </script>
+  </body>
+</html>

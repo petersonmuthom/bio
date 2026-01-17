@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+  text-decoration: none;
+}
+:root{
+    --bigger-font: clamp(28px, 6vw, 30px);
+    --big-font: clamp(14px, 2vw, 18px);
+    --normal-font: clamp(8px, 1vw, 10px);
+    --font-family: "BBH Bogle", sans-serif;
+    --font-2: "Ubuntu", sans-serif;
+    --main-color: #408500;
+    --another-color: #003062;
+}
+body {
+  display: flex;
+  background: #0f0f0f;
+  height: 100vh;
+  color: #fff;
+}
+
+/* Sidebar */
+.sidebar img{
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border-radius: 4px;
+    height: 70px;
+    max-width: 100%;
+}
+.sidebar {
+  background: #012041;
+  padding: 10px 17px;
+}
+
+.logo {
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 12px 30px;
+  color: #fff;
+  font-weight: 600;
+  font-size: var(--big-font);
+  text-decoration: none;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+.sidebar nav a i {
+    padding-right: 20px;
+}
+.sidebar nav a:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.logout {
+  margin-top: 20px;
+  color: #ff5c5c;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Topbar */
+.topbar {
+    position: relative;
+  z-index: 1100;
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #59595959;
+  box-shadow: 0 4px 6px rgb(0, 0, 0);
+}
+.topbar h1{
+    font-size: var(--bigger-font);
+    font-weight: 600;
+    font-family: var(--font-2);
+    color: #012041;
+}
+/* Content */
+.content {
+    background-color: rgb(230, 230, 230);
+  padding: 70px 30px 25px 30px;
+  overflow-y: auto;
+}
+.user i{
+    color: #012041;
+    font-size: 2.4rem;
+}
+/* Stats */
+.stats {
+display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.stat {
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.049);
+  background: #ffffff;
+  padding: 40px 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.stat i{
+  color: #408500;
+  font-size: var(--bigger-font);
+}
+.stat h3 {
+  font-size: 28px;
+  color: #000000;
+}
+.stat p {
+  font-size: var(--big-font);
+  color: var(--main-color);
+  font-weight: 700;
+}
+/* Courses */
+.section-title {
+  margin-bottom: 15px;
+  color: #012041;
+}
+
+.courses {
+  padding-top: 30px;
+ display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding-bottom: 40px;
+}
+
+.course-card {
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.049);
+  background: whitesmoke;
+  padding: 20px 20px;
+  border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.course-card h3 {
+  margin-bottom: 10px;
+  color: var(--another-color);
+}
+
+.course-card p {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.progress {
+    width: 70%;
+  background: #cacaca;
+  height: 8px;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+.progress-bar {
+  height: 90%;
+  background: var(--another-color);
+  border-radius: 10px;
+}
+.course-card a{
+    color: #408500;
+    font-weight: 600;
+}
+.course-card:hover {
+  transform: translateY(-5px);
+}
+.locked {
+  opacity: 0.6;
+}
+
+.locked button {
+  background: #ffb703;
+}
+/* existing styles remain */
+
+/* Mobile menu button */
+.menu-btn,
+.close-btn{
+  position: relative;
+  z-index: 1200;
+  display: none;
+  background: none;
+  color: var(--main-color);
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    padding-top: 100px;
+    top: 0;
+    height: 100%;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* Buttons default state */
+  .menu-btn {
+    display: block;
+  }
+
+  .close-btn {
+    display: none;
+  }
+
+  /* 🔥 WHEN SIDEBAR IS OPEN */
+  .sidebar.active ~ .main .menu-btn {
+    display: none;
+  }
+
+  .sidebar.active ~ .main .close-btn {
+    display: block;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .courses {
+    grid-template-columns: 1fr;
+  }
+   .topbar{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.336);
+    position: fixed;
+    width: 100%;
+   }
+  .topbar h1 {
+    font-size: 18px;
+  }
+  .content{
+    padding-top: 120px;
+  }
+}
+
