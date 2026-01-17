@@ -400,12 +400,10 @@ background-color: var(--another-color);
   display: block;
 }
 .abt-txt{
-    color: #000000bb;
-    text-align: left;
-    font-weight: 700;
-    letter-spacing: 2px;
-    font-size: clamp(20px, 4vw, 23px);
     font-family: var(--font-2);
+        font-size: var(--bigger-font);
+        color: #012041;
+        text-align: center;
 }
 #about-section a{
   display: flex;
