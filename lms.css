@@ -1,4 +1,5 @@
 * {
+  outline: none;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,33 +17,36 @@
 }
 body {
   display: flex;
-  background: #0f0f0f;
-  height: 100vh;
-  color: #fff;
+  background: #f0f0f0; /* CHANGED: From #0f0f0f (black) to light gray */
+  min-height: 100vh;
+  color: #333; /* CHANGED: Better text contrast */
 }
 
-/* Sidebar */
+/* ===== DESKTOP LAYOUT ===== */
+.sidebar {
+  background: #012041;
+  padding: 20px 10px;
+  width: 250px; /* FIXED: Fixed width for desktop */
+  min-height: 100vh;
+  position: fixed; /* FIXED: Fixed position */
+  left: 0;
+  top: 0;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
 .sidebar img{
     margin-bottom: 20px;
-    margin-left: 20px;
+    margin-left: 10px; /* ADJUSTED: Less margin */
     border-radius: 4px;
     height: 70px;
     max-width: 100%;
-}
-.sidebar {
-  background: #012041;
-  padding: 10px 17px;
-}
-
-.logo {
-  color: #ffffff;
-  margin-bottom: 30px;
-  font-size: 22px;
+    display: block;
 }
 
 .sidebar nav a {
   display: block;
-  padding: 12px 30px;
+  padding: 12px 20px; /* ADJUSTED: Less padding */
   color: #fff;
   font-weight: 600;
   font-size: var(--big-font);
@@ -51,9 +55,12 @@ body {
   margin-bottom: 8px;
 }
 .sidebar nav a i {
-    padding-right: 20px;
+    padding-right: 15px; /* ADJUSTED: Less padding */
+    width: 24px;
+    text-align: center;
 }
-.sidebar nav a:hover {
+.sidebar nav a:hover,
+.sidebar nav a.active {
   background-color: var(--main-color);
   color: #fff;
 }
@@ -63,24 +70,27 @@ body {
   color: #ff5c5c;
 }
 
-/* Main */
+/* ===== MAIN CONTENT ===== */
 .main {
-  flex: 1;
+  width: 100%;
+  margin-left: 250px; /* FIXED: Push content to the right of sidebar */
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Topbar */
 .topbar {
-    position: relative;
-  z-index: 1100;
   background: #fff;
-  padding: 20px;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #59595959;
-  box-shadow: 0 4px 6px rgb(0, 0, 0);
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* LIGHTENED: Softer shadow */
+  position: sticky;
+  top: 0;
+  z-index: 90;
 }
 .topbar h1{
     font-size: var(--bigger-font);
@@ -90,32 +100,33 @@ body {
 }
 /* Content */
 .content {
-    background-color: rgb(230, 230, 230);
-  padding: 70px 30px 25px 30px;
+    background-color: rgb(240, 240, 240); /* LIGHTENED: Better contrast */
+  padding: 30px;
+  flex: 1;
   overflow-y: auto;
 }
 .user i{
     color: #012041;
-    font-size: 2.4rem;
+    font-size: 1.8rem; /* ADJUSTED: Slightly smaller */
 }
 /* Stats */
 .stats {
 display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
+  gap: 25px; /* ADJUSTED: Slightly less gap */
   margin-bottom: 30px;
 }
 
 .stat {
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.049);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* IMPROVED: Softer shadow */
   background: #ffffff;
-  padding: 40px 20px;
+  padding: 25px 20px; /* ADJUSTED: Balanced padding */
   border-radius: 10px;
   text-align: center;
 }
 .stat i{
   color: #408500;
-  font-size: var(--bigger-font);
+  font-size: 2.2rem; /* ADJUSTED: Slightly larger */
 }
 .stat h3 {
   font-size: 28px;
@@ -128,48 +139,54 @@ display: grid;
 }
 /* Courses */
 .section-title {
-  margin-bottom: 15px;
+  margin-bottom: 25px; /* INCREASED: More spacing */
   color: #012041;
+  font-size: 1.5rem; /* ADDED: Larger font */
 }
 
 .courses {
   padding-top: 30px;
  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* CHANGED: auto-fill for better grid */
+  gap: 25px; /* ADJUSTED: Balanced gap */
   padding-bottom: 40px;
 }
 
 .course-card {
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.049);
-  background: whitesmoke;
-  padding: 20px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* IMPROVED: Softer shadow */
+  background: white;
+  padding: 20px;
   border-radius: 12px;
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .course-card h3 {
   margin-bottom: 10px;
   color: var(--another-color);
+  line-height: 1.4; /* ADDED: Better readability */
 }
 
 .course-card p {
-  color: #aaa;
+  color: #666; /* CHANGED: Better contrast */
   font-size: 14px;
 }
 
 .progress {
-    width: 70%;
-  background: #cacaca;
+    width: 100%; /* FIXED: Full width */
+  background: #e0e0e0; /* LIGHTENED: Better contrast */
   height: 8px;
   border-radius: 10px;
   margin: 15px 0;
 }
 
 .progress-bar {
-  height: 90%;
+  height: 100%; /* FIXED: Full height */
   background: var(--another-color);
   border-radius: 10px;
+  transition: width 0.5s ease; /* ADDED: Smooth transition */
 }
 .course-card a{
     color: #408500;
@@ -177,42 +194,54 @@ display: grid;
 }
 .course-card:hover {
   transform: translateY(-5px);
-}
-.locked {
-  opacity: 0.6;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* IMPROVED: Enhanced hover */
 }
 
-.locked button {
-  background: #ffb703;
-}
-/* existing styles remain */
-
-/* Mobile menu button */
-.menu-btn,
-.close-btn{
+/* Mobile menu button - HIDDEN ON DESKTOP */
+.menu-btn{
   position: relative;
   z-index: 1200;
-  display: none;
-  background: none;
+  display: none; /* Hidden by default on desktop */
+  background: transparent;
+  border-radius: 50%;
+  height: 49px;
+  width: 49px;
   color: var(--main-color);
-  font-size: 30px;
+  font-size: 24px; /* ADJUSTED: Slightly smaller */
   border: none;
   cursor: pointer;
 }
+.close-btn{
+  margin-top:-10px;
+  margin-right: -20PX;
+  position: relative;
+  z-index: 1200;
+  display: none; /* Hidden by default on desktop */
+  background: transparent;
+  border-radius: 50%;
+  height: 49px;
+  width: 49px;
+  color: var(--main-color);
+  font-size: 24px; /* ADJUSTED: Slightly smaller */
+  border: none;
+  cursor: pointer;
+  
+}
 
-/* Responsive */
+/* ===== MOBILE LAYOUT ===== */
 @media (max-width: 768px) {
-
   body {
     flex-direction: column;
+    background: #fff; /* CHANGED: White background for mobile */
   }
 
   .sidebar {
     position: fixed;
     left: -260px;
-    padding-top: 100px;
+    padding-top: 4px; /* ADJUSTED: Less padding */
     top: 0;
     height: 100%;
+    width: 260px; /* FIXED: Consistent width */
     z-index: 1000;
     transition: left 0.3s ease;
   }
@@ -221,16 +250,20 @@ display: grid;
     left: 0;
   }
 
-  /* Buttons default state */
+  /* Show menu buttons on mobile */
   .menu-btn {
     display: block;
   }
 
   .close-btn {
     display: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1001;
   }
 
-  /* 🔥 WHEN SIDEBAR IS OPEN */
+  /* When sidebar is active, show close button */
   .sidebar.active ~ .main .menu-btn {
     display: none;
   }
@@ -239,27 +272,74 @@ display: grid;
     display: block;
   }
 
+  /* Main content - full width on mobile */
   .main {
     margin-left: 0;
+    width: 100%;
   }
 
   .stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    gap: 15px;
   }
 
   .courses {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
    .topbar{
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.336);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* LIGHTENED */
     position: fixed;
     width: 100%;
+    padding: 20px 20px 10px 20px; /* ADJUSTED: Less padding */
    }
   .topbar h1 {
-    font-size: 18px;
+    font-size: 1.2rem; /* ADJUSTED: Relative units */
   }
   .content{
-    padding-top: 120px;
+    padding: 100px 20px 30px 20px; /* ADJUSTED: Better spacing */
+  }
+  
+  .stat {
+    padding: 20px 15px; /* ADJUSTED: Less padding on mobile */
+  }
+  
+  .stat h3 {
+    font-size: 1.5rem; /* ADJUSTED: Smaller on mobile */
+  }
+  
+  .user-email {
+    
   }
 }
 
+/* For very small screens */
+@media (max-width: 480px) {
+  .stats {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+  }
+  
+  .topbar h1 {
+    font-size: 1.1rem;
+  }
+  
+  .content {
+    padding: 90px 15px 25px 15px;
+  }
+}
+
+/* Overlay for mobile when sidebar is open */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  z-index: 999;
+}
+
+.sidebar.active + .sidebar-overlay {
+  display: block;
+}

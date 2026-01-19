@@ -6,124 +6,424 @@
     <title>LMS: Biostrength</title>
     <link rel="stylesheet" href="lms.css" />
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
     <script
       src="https://kit.fontawesome.com/3fe66e6a4e.js"
       crossorigin="anonymous"
     ></script>
+
+    <style>
+      /* Add loading spinner */
+      #loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        font-size: 20px;
+        color: #012041;
+        flex-direction: column;
+      }
+
+      #loading.hidden {
+        display: none;
+      }
+
+      #error-message {
+        color: red;
+        margin-top: 20px;
+        padding: 10px;
+        background: #ffe6e6;
+        border-radius: 5px;
+        display: none;
+        max-width: 80%;
+        text-align: center;
+      }
+
+      .logout-btn {
+        background: #ff4444;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+
+      .user-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .user-email {
+        color: #012041;
+        font-weight: 600;
+      }
+    </style>
   </head>
   <body>
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-      <img src="images/biostrength logo.jpeg" alt="" />
-      <nav>
-        <a class="active"><i class="fa-solid fa-computer"></i> Dashboard</a>
-        <a href="mycourses.html"
-          ><i class="fa-solid fa-swatchbook"></i> My Courses</a
-        >
-        <a href="certificates.html"
-          ><i class="fa-solid fa-award"></i> Certificates</a
-        >
-        <a><i class="fa-solid fa-credit-card"></i> Payments</a>
-        <a><i class="fa-solid fa-circle-user"></i> Profile</a>
-        <a href="index.html" class="logout"
-          ><i class="fa-solid fa-person-running"></i> Logout</a
-        >
-      </nav>
-    </aside>
+    <!-- Loading Screen -->
+    <div id="loading">
+      <i
+        class="fa-solid fa-spinner fa-spin"
+        style="font-size: 40px; margin-bottom: 20px"
+      ></i>
+      <p>Verifying your access...</p>
+      <div id="error-message"></div>
+    </div>
 
-    <!-- Main -->
-    <main class="main">
-      <!-- Topbar -->
-      <header class="topbar">
-        <button class="menu-btn" id="menuBtn">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+    <!-- Main Content (hidden until authenticated) -->
+    <adiv id="mainContent">
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
         <button class="close-btn" id="closeMenu">
-          <i class="fa-solid fa-x"></i>
-        </button>
-        <h1>Dashboard</h1>
-        <span class="user"><i class="fa-solid fa-circle-user"></i></span>
-      </header>
+            <i class="fa-solid fa-x"></i>
+          </button>
+        <img src="images/biostrength logo.jpeg" alt="Biostrength Logo" />
+        <nav>
+          <a class="active"><i class="fa-solid fa-computer"></i> Dashboard</a>
+          <a href="mycourses.html"
+            ><i class="fa-solid fa-swatchbook"></i> My Courses</a
+          >
+          <a href="certificates.html"
+            ><i class="fa-solid fa-award"></i> Certificates</a
+          >
+          <a><i class="fa-solid fa-credit-card"></i> Payments</a>
+          <a><i class="fa-solid fa-circle-user"></i> Profile</a>
+          <a class="logout-btn" id="topbarLogout" class="logout"
+            ><i class="fa-solid fa-person-running"></i> Logout</a
+          >
+        </nav>
+      </aside>
 
-      <section class="content">
-        <!-- Stats -->
-        <div class="stats">
-          <div class="stat">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <h3>3</h3>
-            <p>Courses Enrolled</p>
+      <!-- Main -->
+      <main class="main">
+        <!-- Topbar -->
+        <header class="topbar">
+          <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1>Dashboard</h1>
+          <div class="user-info">
+            <span class="user-email" id="userEmail"></span>
+            <span class="user"><i class="fa-solid fa-circle-user"></i></span>
           </div>
-          <div class="stat">
-            <i class="fa-solid fa-bars-progress"></i>
-            <h3>67%</h3>
-            <p>Progress</p>
-          </div>
-          <div class="stat">
-            <i class="fa-solid fa-award"></i>
-            <h3>1</h3>
-            <p>Certificate</p>
-          </div>
-          <div class="stat">
-            <i class="fa-solid fa-hourglass-half"></i>
-            <h3>33+</h3>
-            <p>Hours</p>
-          </div>
-        </div>
+        </header>
 
-        <!-- Courses -->
-        <h2 class="section-title">Explore Courses</h2>
-        <div class="courses">
-          <div class="course-card">
-            <img src="" alt="" />
-            <h3>
-              From Sample to Solution: Strengthening Diagnostic Accuracy....
-            </h3>
-            <p>Beginner • 4 Weeks</p>
-            <div class="progress">
-              <div class="progress-bar" style="width: 30%"></div>
+        <section class="content">
+          <!-- Stats -->
+          <div class="stats">
+            <div class="stat">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <h3 id="coursesCount">0</h3>
+              <p>Courses Enrolled</p>
             </div>
-            <a href=""
-              >Continue Learning <i class="fa-solid fa-arrow-right"></i
-            ></a>
-          </div>
-          <div class="course-card">
-            <img src="" alt="" />
-            <h3>Supporting Clinical Trials Through Strong Lab Systems....</h3>
-            <p>Beginner • 6 Weeks</p>
-            <div class="progress">
-              <div class="progress-bar" style="width: 70%"></div>
+            <div class="stat">
+              <i class="fa-solid fa-bars-progress"></i>
+              <h3 id="progressPercent">0%</h3>
+              <p>Progress</p>
             </div>
-            <a href=""
-              >Continue Learning <i class="fa-solid fa-arrow-right"></i
-            ></a>
-          </div>
-          <div class="course-card">
-            <img src="" alt="" />
-            <h3>Meeting Global Standards in Laboratory Practice....</h3>
-            <p>Beginner • 2 Weeks</p>
-            <div class="progress">
-              <div class="progress-bar" style="width: 40%"></div>
+            <div class="stat">
+              <i class="fa-solid fa-award"></i>
+              <h3 id="certificatesCount">0</h3>
+              <p>Certificate</p>
             </div>
-            <a href=""
-              >Continue Learning <i class="fa-solid fa-arrow-right"></i
-            ></a>
+            <div class="stat">
+              <i class="fa-solid fa-hourglass-half"></i>
+              <h3 id="hoursCount">0+</h3>
+              <p>Hours</p>
+            </div>
           </div>
 
-          <div class="course-card">
-            <img src="" alt="" />
-            <h3>Practical Skills for Sustainable Laboratory Systems....</h3>
-            <p>Beginner • 2 Weeks</p>
-            <div class="progress">
-              <div class="progress-bar" style="width: 10%"></div>
+          <!-- Courses -->
+          <h2 class="section-title">Explore Courses</h2>
+          <div class="courses">
+            <div class="course-card">
+              <div
+                class="course-image"
+                style="
+                  background: #e3f2fd;
+                  height: 150px;
+                  border-radius: 8px;
+                  margin-bottom: 15px;
+                "
+              ></div>
+              <h3>
+                From Sample to Solution: Strengthening Diagnostic Accuracy
+              </h3>
+              <p>Beginner • 4 Weeks</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 30%"></div>
+              </div>
+              <a href="#" class="course-link"
+                >Continue Learning <i class="fa-solid fa-arrow-right"></i
+              ></a>
             </div>
-            <a href=""
-              >Continue Learning <i class="fa-solid fa-arrow-right"></i
-            ></a>
+            <div class="course-card">
+              <div
+                class="course-image"
+                style="
+                  background: #e8f5e9;
+                  height: 150px;
+                  border-radius: 8px;
+                  margin-bottom: 15px;
+                "
+              ></div>
+              <h3>Supporting Clinical Trials Through Strong Lab Systems</h3>
+              <p>Beginner • 6 Weeks</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 70%"></div>
+              </div>
+              <a href="#" class="course-link"
+                >Continue Learning <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+            <div class="course-card">
+              <div
+                class="course-image"
+                style="
+                  background: #fff3e0;
+                  height: 150px;
+                  border-radius: 8px;
+                  margin-bottom: 15px;
+                "
+              ></div>
+              <h3>Meeting Global Standards in Laboratory Practice</h3>
+              <p>Beginner • 2 Weeks</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 40%"></div>
+              </div>
+              <a href="#" class="course-link"
+                >Continue Learning <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+            <div class="course-card">
+              <div
+                class="course-image"
+                style="
+                  background: #fce4ec;
+                  height: 150px;
+                  border-radius: 8px;
+                  margin-bottom: 15px;
+                "
+              ></div>
+              <h3>Practical Skills for Sustainable Laboratory Systems</h3>
+              <p>Beginner • 2 Weeks</p>
+              <div class="progress">
+                <div class="progress-bar" style="width: 10%"></div>
+              </div>
+              <a href="#" class="course-link"
+                >Continue Learning <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
 
-    <script src="lms.js "></script>
+    <script>
+      // ============================================
+      // SIMPLE AUTH CHECK WITHOUT REDIRECT LOOPS
+      // ============================================
+
+      // Firebase Configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDJ87n0P3DOd5QsDYfjaGoO0hbaAZr_Mc8",
+        authDomain: "bio-37ae0.firebaseapp.com",
+        projectId: "bio-37ae0",
+        storageBucket: "bio-37ae0.appspot.com",
+        messagingSenderId: "72501818145",
+        appId: "1:72501818145:web:fc466e47e697b7c31e8460",
+      };
+
+      // Initialize Firebase (only once)
+      if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+      }
+
+      // DOM Elements
+      const loadingScreen = document.getElementById("loading");
+      const mainContent = document.getElementById("mainContent");
+      const errorMessage = document.getElementById("error-message");
+      const userEmailElement = document.getElementById("userEmail");
+
+      // Hide main content initially
+      mainContent.style.display = "none";
+
+      // SIMPLE AUTH CHECK - NO MULTIPLE REDIRECTS
+      function checkAuth() {
+        console.log("Checking authentication...");
+
+        // Check Firebase auth state
+        firebase.auth().onAuthStateChanged((user) => {
+          console.log(
+            "Auth state changed:",
+            user ? "Logged in" : "Not logged in",
+          );
+
+          if (user) {
+            // User is signed in - SHOW THE PAGE
+            console.log("User authenticated:", user.email);
+
+            // Update UI with user info
+            userEmailElement.textContent = user.email.split("@")[0];
+
+            // Hide loading, show content
+            loadingScreen.classList.add("hidden");
+            mainContent.style.display = "block";
+
+            // Update stats
+            document.getElementById("coursesCount").textContent = "4";
+            document.getElementById("progressPercent").textContent = "37%";
+            document.getElementById("certificatesCount").textContent = "1";
+            document.getElementById("hoursCount").textContent = "33+";
+
+            // Setup sidebar functionality
+            setupSidebar();
+          } else {
+            // No user is signed in - REDIRECT ONCE
+            console.log("No user signed in - redirecting to login");
+            errorMessage.textContent = "Please login to access the LMS";
+            errorMessage.style.display = "block";
+
+            // Wait 1.5 seconds then redirect ONCE
+            setTimeout(() => {
+              window.location.href = "login.html";
+            }, 1500);
+          }
+        });
+      }
+
+      // Logout functionality
+      function setupLogout() {
+        const logout = async () => {
+          try {
+            await firebase.auth().signOut();
+            // Clear any local storage
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("userEmail");
+            // Redirect to home page
+            window.location.href = "index.html";
+          } catch (error) {
+            console.error("Logout error:", error);
+            alert("Logout failed. Please try again.");
+          }
+        };
+
+        // Sidebar logout
+        const sidebarLogout = document.getElementById("sidebarLogout");
+        if (sidebarLogout) {
+          sidebarLogout.addEventListener("click", (e) => {
+            e.preventDefault();
+            logout();
+          });
+        }
+
+        // Topbar logout
+        const topbarLogout = document.getElementById("topbarLogout");
+        if (topbarLogout) {
+          topbarLogout.addEventListener("click", logout);
+        }
+      }
+
+      // Sidebar functionality
+      function setupSidebar() {
+        const menuBtn = document.getElementById("menuBtn");
+        const closeMenu = document.getElementById("closeMenu");
+        const sidebar = document.getElementById("sidebar");
+
+        if (menuBtn && closeMenu && sidebar) {
+          // Mobile menu toggle
+          menuBtn.addEventListener("click", () => {
+            sidebar.classList.add("active");
+            menuBtn.style.display = "none";
+            closeMenu.style.display = "block";
+          });
+
+          closeMenu.addEventListener("click", () => {
+            sidebar.classList.remove("active");
+            menuBtn.style.display = "block";
+            closeMenu.style.display = "none";
+          });
+
+          // Close sidebar when clicking outside on mobile
+          document.addEventListener("click", (e) => {
+            if (window.innerWidth <= 768) {
+              if (
+                !sidebar.contains(e.target) &&
+                e.target !== menuBtn &&
+                !menuBtn.contains(e.target) &&
+                e.target !== closeMenu &&
+                !closeMenu.contains(e.target)
+              ) {
+                sidebar.classList.remove("active");
+                menuBtn.style.display = "block";
+                closeMenu.style.display = "none";
+              }
+            }
+          });
+        }
+
+        // Setup logout
+        setupLogout();
+      }
+
+      // Initialize everything when page loads
+      document.addEventListener("DOMContentLoaded", () => {
+        console.log("DOM loaded, checking auth...");
+
+        // Start auth check
+        checkAuth();
+
+        // Set timeout just in case
+        setTimeout(() => {
+          if (
+            !firebase.auth().currentUser &&
+            loadingScreen.style.display !== "none"
+          ) {
+            console.log("Auth check timeout - forcing login redirect");
+            window.location.href = "login.html";
+          }
+        }, 5000); // 5 second timeout
+      });
+
+      // Course card interactions
+      document.addEventListener("DOMContentLoaded", () => {
+        // Add hover effect to course cards
+        const courseCards = document.querySelectorAll(".course-card");
+        courseCards.forEach((card) => {
+          card.addEventListener("mouseenter", () => {
+            card.style.transform = "translateY(-5px)";
+          });
+          card.addEventListener("mouseleave", () => {
+            card.style.transform = "translateY(0)";
+          });
+        });
+
+        // Course links functionality
+        const courseLinks = document.querySelectorAll(".course-link");
+        courseLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const user = firebase.auth().currentUser;
+            if (user) {
+              // You can add course navigation here
+              alert("Course navigation would go here. User is authenticated.");
+            } else {
+              window.location.href = "login.html";
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

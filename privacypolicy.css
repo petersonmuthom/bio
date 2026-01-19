@@ -218,14 +218,11 @@ header{
     justify-content: center;
 }
 .abt-txt{
-    color: #000000bb;
-    text-align: left;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 0 0px;
-    margin: 10px auto;
-    font-size: clamp(17px, 4vw, 20px);
-    font-family: var(--font-2);
+     font-family: var(--font-2);
+        font-size: var(--big-font);
+        color: #011730;
+  line-height: 1.4; 
+        text-align: left;
 }
 .abt-txt span{
     color: #011730;
