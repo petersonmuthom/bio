@@ -57,7 +57,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 80px;
+    padding: 40px 70px;
     font-family: sans-serif;
     height: 70px;
     font-size: var(--normal-font);
@@ -253,7 +253,8 @@ header{
   padding: 0px 20px 40px 20px;
 }
 .hero-text-container{
-  border-radius: 6px;
+  border-radius: 12px;
+  border: 1px solid rgba(128, 128, 128, 0.297);
   background-color: #ffffffb0;
     padding: 20px 40px 20px 40px;
     width: 70%;
@@ -290,6 +291,64 @@ header{
   font-size: 5rem;
   font-weight: 900;
 }
+
+#cta-webinars {
+  background-color: whitesmoke;
+  padding: 50px 70px;
+ display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* CHANGED: auto-fill for better grid */
+  gap: 25px; /* ADJUSTED: Balanced gap */
+  padding-bottom: 40px;
+}
+
+.course-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.213); /* IMPROVED: Softer shadow */
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(128, 128, 128, 0.297);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.course-card h3 {
+  margin-bottom: 10px;
+  font-family: var(--font-2);
+  color: var(--another-color);
+  line-height: 1.4; /* ADDED: Better readability */
+}
+
+.course-card p {
+  margin-top: 10px;
+  font-family: var(--font-2);
+  color: #010e1d;
+   /* CHANGED: Better contrast */
+  font-size: 14px;
+  font-weight: 500;
+}
+.course-card p i{
+  font-size: var(--big-font);
+  margin-right: 7px;
+  color: var(--main-color);
+}
+.course-card a{
+  text-align: center;
+  font-family: var(--font-2);
+  margin-top: 30px;
+  background-color: var(--main-color);
+    color: black;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* IMPROVED: Enhanced hover */
+}
+
+
 .impactee{
   padding-top: 40px;
   background-color: var(--another-color);
@@ -519,13 +578,15 @@ background-color: #012041;
     gap: 20px;
 }
 .p-card{
-  border-radius: 4px;
+  border-radius: 12px;
     background: #dadada;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.338);
+    border: 1px solid rgba(128, 128, 128, 0.297);
     display: flex;
     flex-direction: column;
 }
 .p-card img{
-    border-radius: 6px 6px 0 0;
+    border-radius: 12px 12px 0 0;
     width: 100%;
     height: 260px;
     object-fit: cover;
@@ -564,7 +625,7 @@ background-color: #012041;
 }
 #team{
     padding: 20px 30px 60px 30px;
-    background-color: #ffffff;
+    background-color: whitesmoke;
 }
 #team-tte{
     margin-bottom: 30px;
@@ -591,8 +652,10 @@ background-color: #012041;
     gap: 40px;
 }
 .team-card  {
-   border-radius: 6px;
-    background: #dadada;
+   border-radius: 12px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.298);
+   border: 1px solid rgba(128, 128, 128, 0.297);
+    background: #fff;
     padding: 30px 10px;
     text-align: center;
 }
@@ -911,6 +974,11 @@ background-color: #012041;
   #team p{
     font-size: var(--big-font);
   }
+  #cta-webinars {
+     grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 40px 20px;
+  }
 }
 @media screen and (max-width: 600px) {
 
@@ -961,10 +1029,10 @@ background-color: #012041;
     letter-spacing: -2px;
 }
    .hero-text{
-  padding: 0px 10px 40px 10px;
+  padding: 0px 20px 40px 20px;
 }
   .hero-text-container{
-    padding: 40px 10px 100px 10px;
+    padding: 40px 10px 100px 20px;
     width: 100%;
   }
   .scroll-down i{
@@ -1011,7 +1079,7 @@ font-size: var(--big-font);
       font-size: var(--big-font);
     }
     #programs{
-        padding: 40px 30px;
+        padding: 20px 30px;
     }
     #team{
         padding: 40px 0px;
