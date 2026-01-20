@@ -400,7 +400,8 @@ header{
   }
   .abt-txt{
     padding: 0;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
+    margin-top: 20px;
     font-size: var(--big-font);
     font-family: var(--font-2);
   }
