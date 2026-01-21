@@ -291,8 +291,19 @@ header{
   font-size: 5rem;
   font-weight: 900;
 }
-
-#cta-webinars {
+#cta-webinars{
+  padding: 40px 0px 0px 0px;
+  background-color: whitesmoke;
+}
+#cta-webinars h1{
+  font-size: var(--bigger-font);
+    font-family: var(--font-2);
+    font-weight: 800;
+    color: var(--another-color);
+    text-align: center;
+    justify-content: center;
+}
+.cta-webinars {
   background-color: whitesmoke;
   padding: 50px 70px;
  display: grid;
@@ -656,7 +667,7 @@ background-color: #012041;
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.298);
    border: 1px solid rgba(128, 128, 128, 0.297);
     background: #fff;
-    padding: 30px 10px;
+    padding: 30px 20px;
     text-align: center;
 }
 .team-card-2{
@@ -974,7 +985,7 @@ background-color: #012041;
   #team p{
     font-size: var(--big-font);
   }
-  #cta-webinars {
+  .cta-webinars {
      grid-template-columns: 1fr;
     gap: 20px;
     padding: 40px 20px;
@@ -1085,7 +1096,7 @@ font-size: var(--big-font);
         padding: 40px 0px;
     }
     .team-grid{
-        padding: 20px 10px;
+        padding: 20px 20px;
     }
     .team-grid img{
     width: 100%;
