@@ -458,15 +458,15 @@ background-color: var(--another-color);
         text-align: center;
 }
 #about-section a{
-  display: flex;
-  padding: 10px 0px;
-  font-weight: 700;
   border-radius: 6px;
-  justify-content: center;
+  display: flex;
+  padding: 10px 10px;
+  font-weight: 700;
   color: #000;
+  justify-content: center;
   text-align: center;
-  width: 44%;
-  margin: 40px auto;
+  width: 200px;
+  margin: 20px auto 0px auto;
   background-color: var(--main-color);
   font-size: var(--big-font);
   font-family: var(--font-2);
@@ -1093,8 +1093,8 @@ font-size: var(--big-font);
   #impact-section{
     padding: 70px 10px;
   }
-    .categories {
-       padding: 40px 5%;
+    #categories {
+      padding: 30px 5% 40px 5%;
     }
  
     .category-grid{
