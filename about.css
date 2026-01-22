@@ -395,7 +395,7 @@ header{
     padding: 160px 10px 40px 10px;
   }
   .abt-tte{
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
   .abt-txt{
         font-family: var(--font-2);
