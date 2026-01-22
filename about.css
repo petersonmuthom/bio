@@ -202,7 +202,7 @@ header{
   text-align: center;
   align-items: center;
   margin: auto;
-  background-color: rgba(245, 245, 245, 0.884);
+  background-color: rgb(255, 255, 255);
   padding: 200px 100px 40px 100px;
 }
 .abt-tte{
