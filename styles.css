@@ -1068,11 +1068,12 @@ background-color: #012041;
       padding: 30px 0px;
     }
     .after-section h4{
+      margin-top: -2px;
       font-size: var(--big-font);
     }
     .stats-container{
       padding: 0px;
-      margin: 0px 0px;
+      margin: 10px 0px;
     }
     .stats-container i{
   margin-bottom: -20px;
@@ -1106,10 +1107,16 @@ font-size: var(--big-font);
       font-size: var(--big-font);
     }
     #programs{
-        padding: 20px 30px;
+        padding: 20px 30px 0px 30px;
+    }
+    #programs h1{
+      margin-top: 30px;
+    }
+    .p-grid{
+      padding-top: 40px;
     }
     #team{
-        padding: 40px 0px;
+        padding: 20px 0px;
     }
     .team-grid{
         padding: 20px 20px;
