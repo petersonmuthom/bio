@@ -378,8 +378,8 @@ font-size: var(--bigger-font);
 background-color: var(--another-color);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  padding: 20px 0px 70px 0;
+  gap: 20px;
+  padding: 20px 0px 70px 0px;
 }
 .count-darcual{
   margin-top: 10px;
@@ -400,7 +400,7 @@ background-color: var(--another-color);
 }
 .stats-container h4{
   margin-top: -10px;
-    color: var(--main-color);
+    color: #ffffffe3;
   font-size: clamp(24px, 6vw, 26px);
   font-weight: 800;
 }
@@ -945,6 +945,20 @@ background-color: #012041;
   .contact-right{
         display: none;
   }
+  .after-section {
+    gap: 10px 0px;
+  }
+  .stats-container{
+    margin: 20px 0;
+    padding: 0 -20px;
+  }
+  .stats-container i{
+    font-size: 2rem;
+  }
+  .stats-container h4{
+    margin-top: 2px;
+    font-size: var(--big-font);
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -1050,13 +1064,15 @@ background-color: #012041;
     font-size: 4rem;
   }
    .after-section{
-      padding: 30px 10px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      padding: 30px 0px;
     }
-    .after-section h1{
+    .after-section h4{
       font-size: var(--big-font);
     }
     .stats-container{
-      margin: 0px 0;
+      padding: 0px;
+      margin: 0px 0px;
     }
     .stats-container i{
   margin-bottom: -20px;
