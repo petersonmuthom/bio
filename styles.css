@@ -729,7 +729,7 @@ background-color: #012041;
 
 
 #faqs{
-  padding: 40px 0px;
+  padding: 40px 10px 70px 10px;
   background-color: #fff;
 }
 #faqs h1{
@@ -741,7 +741,7 @@ background-color: #012041;
 }
  .faq-container { 
     width: 100%; 
-    max-width: 650px; /*Set the container to full width as needed. */
+    max-width: 950px; /*Set the container to full width as needed. */
     margin: auto; 
   }
   .faq-item { padding: 0; }
@@ -753,7 +753,7 @@ background-color: #012041;
     font-family: var(--font-2);
     width: 100%;
     text-align: left;
-    font-size: 18px; 
+    font-size: 1.7rem; 
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -762,6 +762,8 @@ background-color: #012041;
   .faq-answer { 
     display: none; 
     padding: 15px;
+    font-family: var(--font-2);
+    font-size: 1.4rem;
     color: #333;
   }
   .faq-answer p {
@@ -773,7 +775,7 @@ background-color: #012041;
     margin: 5px 0;
   }
   .faq-question .arrow {
-    font-size: 20px; /* Increased arrow size */
+    font-size: 1.7rem;
     transition: transform 0.3s ease;
     color: var(--main-color);
   }
@@ -1065,6 +1067,15 @@ background-color: #012041;
   #faqs{
     padding: 20px 20px 30px 20px;
   }
+  .faq-question{
+    font-size: 18px;
+  }
+  .faq-answer { 
+    font-size: 16px;
+  }
+   .faq-question .arrow {
+    font-size: 20px;
+   }
 }
 @media screen and (max-width: 600px) {
 
