@@ -28,3 +28,24 @@ countersEl.forEach(counterEl => {
         }
     }
 });
+
+
+
+
+document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      let answer = button.nextElementSibling;
+      let arrow = button.querySelector('.arrow');
+
+      if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+        arrow.style.transform = 'rotate(0deg)';
+      } else {
+        document.querySelectorAll('.faq-answer').forEach(ans => ans.style.display = 'none');
+        document.querySelectorAll('.faq-question .arrow').forEach(arr => arr.style.transform = 'rotate(0deg)');
+
+        answer.style.display = 'block';
+        arrow.style.transform = 'rotate(90deg)';
+      }
+    });
+  });
