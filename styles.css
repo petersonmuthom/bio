@@ -452,7 +452,7 @@ background-color: var(--another-color);
 }
 .abt-txt{
     font-family: var(--font-2);
-        font-size: var(--bigger-font);
+        font-size: 1.7rem;
         color: #011730;
   line-height: 1.4; 
         text-align: center;

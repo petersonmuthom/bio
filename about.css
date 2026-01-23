@@ -27,7 +27,7 @@ header{
     z-index: 1000;
 }
 .header-1{
-
+  padding: 4px;
     font-family: sans-serif;
     text-align: center;
     align-items: center;
@@ -46,6 +46,7 @@ header{
 }
 .header-1 a{
     border: 3px solid #000;
+    border-radius: 6px;
     color: #000;
     margin-left: 20px;
     font-size: var(--big-font);
@@ -56,8 +57,9 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 80px;
+    padding: 40px 70px;
     font-family: sans-serif;
+    height: 70px;
     font-size: var(--normal-font);
     width: 100%;
     background-color: #003062;
@@ -225,10 +227,9 @@ header{
 .abt-txt{
   margin-bottom: 30px;
   font-family: var(--font-2);
-        font-size: var(--bigger-font);
+        font-size: 1.7rem;
         color: #011730;
   line-height: 1.4; 
-        text-align: ;
 }
 
 
