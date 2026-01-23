@@ -28,7 +28,7 @@ header{
     z-index: 1000;
 }
 .header-1{
-
+  padding: 4px 0px;
     font-family: sans-serif;
     text-align: center;
     align-items: center;
@@ -52,13 +52,15 @@ header{
     font-size: var(--big-font);
     font-weight: 700;
     padding: 4px;
+    border-radius: 6px;
 }
 .header-2{
-    display: flex;
+ display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 80px;
+    padding: 40px 70px;
     font-family: sans-serif;
+    height: 70px;
     font-size: var(--normal-font);
     width: 100%;
     background-color: #003062;
