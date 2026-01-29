@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Courses: Biostrength</title>
+    <title>LMS: Biostrength</title>
     <link rel="stylesheet" href="lms.css" />
 
     <!-- Firebase SDK -->
@@ -112,7 +112,7 @@
           <button class="menu-btn" id="menuBtn">
             <i class="fa-solid fa-bars"></i>
           </button>
-          <h1>My Courses</h1>
+          
           <div class="user-info">
             <span class="user-email" id="userEmail"></span>
             <span class="user"><i class="fa-solid fa-circle-user"></i></span>
@@ -120,9 +120,32 @@
         </header>
 
         <section class="content">
+          <!-- Stats -->
+          <div class="stats">
+            <div class="stat">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <h3 id="coursesCount">0</h3>
+              <p>Courses Enrolled</p>
+            </div>
+            <div class="stat">
+              <i class="fa-solid fa-bars-progress"></i>
+              <h3 id="progressPercent">0%</h3>
+              <p>Progress</p>
+            </div>
+            <div class="stat">
+              <i class="fa-solid fa-award"></i>
+              <h3 id="certificatesCount">0</h3>
+              <p>Certificate</p>
+            </div>
+            <div class="stat">
+              <i class="fa-solid fa-hourglass-half"></i>
+              <h3 id="hoursCount">0+</h3>
+              <p>Hours</p>
+            </div>
+          </div>
 
           <!-- Courses -->
-          <h2 class="section-title">Explore Courses</h2>
+          <h2 class="section-title">My Courses</h2>
           <div class="courses">
             <div class="course-card">
               <div
