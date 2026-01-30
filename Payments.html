@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manual Payment - Equity Bank Instructions</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        scroll-behavior: smooth;
+        scrollbar-color: #408500 #012041;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-focus-ring-color: transparent;
+        outline: none;
+      }
+      :root {
+        --bigger-font: clamp(28px, 6vw, 30px);
+        --big-font: clamp(14px, 2vw, 18px);
+        --normal-font: clamp(8px, 1vw, 10px);
+        --font-family: "BBH Bogle", sans-serif;
+        --font-2: "Ubuntu", sans-serif;
+        --main-color: #408500;
+        --another-color: #003062;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+          sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+        min-height: 100vh;
+        padding: 20px;
+        color: #333;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 20px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .logo {
+        width: 120px;
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        color: #012041;
+        margin-bottom: 10px;
+        font-size: 28px;
+      }
+
+      .subtitle {
+        color: var(--another-color);
+        font-size: 16px;
+      }
+
+      .payment-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 25px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        border-left: 5px solid var(--main-color);
+      }
+
+      .card-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        color: var(--another-color);
+      }
+
+      .card-title i {
+        background: var(--main-color);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        font-size: 18px;
+      }
+
+      .payment-details {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 25px;
+      }
+
+      .detail-box {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #e9ecef;
+      }
+
+      .detail-label {
+        font-size: 14px;
+        color: #6c757d;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .detail-value {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--another-color);
+        font-family: "Courier New", monospace;
+        background: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: 2px dashed #dee2e6;
+      }
+
+      .highlight-value {
+        color: var(--another-color);
+        font-size: 26px;
+      }
+
+      .instructions {
+        background: #e8f4ff;
+        padding: 25px;
+        border-radius: 10px;
+        margin-top: 20px;
+        border-left: 4px solid var(--another-color);
+      }
+
+      .instructions h3 {
+        color: #012041;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+      }
+
+      .instructions ol {
+        margin-left: 20px;
+      }
+
+      .instructions li {
+        margin-bottom: 12px;
+        line-height: 1.6;
+        padding-left: 10px;
+      }
+
+      .copy-btn {
+        background: var(--main-color);
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        margin-top: 10px;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .copy-btn:hover {
+        background: #408500;
+        transform: translateY(-2px);
+      }
+
+      .copy-btn.copied {
+        background: var(--main-color);
+      }
+
+      .security-note {
+        background: #fff3cd;
+        border: 1px solid #ffecb5;
+        color: #856404;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 25px;
+        font-size: 14px;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 40px;
+        color: #7f8c8d;
+        font-size: 14px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 10px;
+        }
+
+        .payment-card {
+          padding: 20px;
+        }
+
+        .detail-value {
+          font-size: 20px;
+          word-break: break-all;
+        }
+
+        .payment-details {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .print-btn {
+        background: var(--another-color);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        margin-top: 15px;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div
+          class="logo-placeholder"
+          style="font-size: 48px; color: #408500; margin-bottom: 10px"
+        >
+          <i class="fas fa-university"></i>
+        </div>
+        <h1>Equity Bank Payment Instructions</h1>
+        <p class="subtitle">Manual Payment Processing via PayBill</p>
+      </div>
+
+      <div class="payment-card">
+        <div class="card-title">
+          <i class="fas fa-money-check-alt"></i>
+          <h2>Payment Credentials</h2>
+        </div>
+
+        <div class="payment-details">
+          <div class="detail-box">
+            <div class="detail-label">PayBill Number</div>
+            <div class="detail-value highlight-value" id="paybillNumber">
+              247247
+            </div>
+            <button class="copy-btn" onclick="copyToClipboard('paybillNumber')">
+              <i class="far fa-copy"></i> Copy PayBill Number
+            </button>
+          </div>
+
+          <div class="detail-box">
+            <div class="detail-label">Account Number</div>
+            <div class="detail-value" id="accountNumber">0610284671060</div>
+            <button class="copy-btn" onclick="copyToClipboard('accountNumber')">
+              <i class="far fa-copy"></i> Copy Account Number
+            </button>
+          </div>
+        </div>
+
+        <div class="instructions">
+          <h3><i class="fas fa-list-ol"></i> Payment Instructions</h3>
+          <ol>
+            <li>Go to <strong>M-PESA</strong> on your phone</li>
+            <li>Select <strong>"Lipa na M-PESA"</strong></li>
+            <li>Select <strong>"Pay Bill"</strong></li>
+            <li>Enter Business Number: <strong>247247</strong></li>
+            <li>Enter Account Number: <strong>0610284671060</strong></li>
+            <li>Enter the <strong>amount: Ksh 50</strong> you wish to pay</li>
+            <li>Enter your M-PESA PIN and confirm payment</li>
+            <li>You will receive a confirmation SMS from M-PESA</li>
+          </ol>
+        </div>
+
+        <div class="btn-group">
+          <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Print Instructions
+          </button>
+          <button class="copy-btn" onclick="copyAllDetails()">
+            <i class="fas fa-copy"></i> Copy All Details
+          </button>
+        </div>
+
+        <div class="security-note">
+          <strong><i class="fas fa-shield-alt"></i> Security Notice:</strong>
+          This is a Kenya Shillings (KShs) account. Ensure you enter the exact
+          account number as shown. Keep your payment confirmation details for
+          reference.
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>
+          <i class="fas fa-info-circle"></i> For payment verification or
+          assistance, contact our support team
+        </p>
+        <p style="margin-top: 10px">
+          © 2026 BIOSTRENGTH PAYMENT PORTAL. ALL PAYMENT DETAILS ARE
+          CONFIDENTIALL.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function copyToClipboard(elementId) {
+        const element = document.getElementById(elementId);
+        const text = element.innerText;
+
+        navigator.clipboard.writeText(text).then(() => {
+          const btn = element.nextElementSibling;
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          btn.classList.add("copied");
+
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.classList.remove("copied");
+          }, 2000);
+        });
+      }
+
+      function copyAllDetails() {
+        const paybill = document.getElementById("paybillNumber").innerText;
+        const account = document.getElementById("accountNumber").innerText;
+        const text = `Equity Bank Payment Details:\nPayBill: ${paybill}\nAccount: ${account}\n\nPayment Instructions:\n1. Go to M-PESA\n2. Select "Lipa na M-PESA"\n3. Select "Pay Bill"\n4. Enter Business Number: ${paybill}\n5. Enter Account Number: ${account}\n6. Enter payment amount\n7. Enter M-PESA PIN and confirm`;
+
+        navigator.clipboard.writeText(text).then(() => {
+          const btn = event.target;
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '<i class="fas fa-check"></i> All Details Copied!';
+          btn.classList.add("copied");
+
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.classList.remove("copied");
+          }, 2000);
+        });
+      }
+
+      // Add animation to payment card
+      document.addEventListener("DOMContentLoaded", function () {
+        const card = document.querySelector(".payment-card");
+        card.style.opacity = "0";
+        card.style.transform = "translateY(20px)";
+
+        setTimeout(() => {
+          card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+          card.style.opacity = "1";
+          card.style.transform = "translateY(0)";
+        }, 100);
+      });
+    </script>
+  </body>
+</html>
