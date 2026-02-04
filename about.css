@@ -154,6 +154,7 @@ header{
 }
 
 .dropdown-content {
+  border-radius: 0px 0px 6px 6px;
   display: none;
   position: absolute;
   background-color: #012041;
@@ -175,6 +176,7 @@ header{
   margin-top: -10px;
 }
 .topnav a:hover, .dropdown:hover .dropbtn {
+  border-radius: 6px;
   background-color: var(--main-color);
   color: white;
 }
