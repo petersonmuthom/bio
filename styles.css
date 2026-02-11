@@ -444,7 +444,7 @@ background-color: var(--another-color);
     justify-content: center;
 }
 #about-section img{
-  margin: 0px auto -40px auto;
+  margin: 0px auto -30px auto;
   align-items: center;
   justify-content: center;
    height: 340px; 
@@ -453,7 +453,7 @@ background-color: var(--another-color);
 }
 .abt-txt{
     font-family: var(--font-2);
-        font-size: 1.7rem;
+        font-size: 1.4rem;
         color: #011730;
   line-height: 1.4; 
         text-align: center;
@@ -467,7 +467,7 @@ background-color: var(--another-color);
   justify-content: center;
   text-align: center;
   width: 200px;
-  margin: 20px auto 0px auto;
+  margin: 30px auto 0px auto;
   background-color: var(--main-color);
   font-size: var(--big-font);
   font-family: var(--font-2);
@@ -1212,10 +1212,13 @@ background-color: #012041;
     letter-spacing: 0.7px;
     font-size: clamp(35px, 8vw, 45px);
   }
+  .abt-txt{
+    text-align: left;
+  }
    .vision-mission-values {
                 grid-template-columns: 1fr;  /* mobile: stacked */
                 gap: 1.4rem;
-                padding: 20px 20px 70px 20px;
+                padding: 20px 20px 50px 20px;
             }
             
           
