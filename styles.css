@@ -74,6 +74,7 @@ header{
     justify-content: space-between;
 }
 .logo img {
+  border-radius: 5px;
     height: 70px; 
     max-width: 100%;
 }
@@ -146,9 +147,7 @@ header{
 
   
 }
-.dropbtn{
 
-}
 .dropdown .dropbtn {
   font-size: 17px;    
   border: none;
@@ -1180,6 +1179,7 @@ background-color: #012041;
 @media screen and (max-width: 600px) {
   .logo img {
     height: 58px; 
+    border-radius: 3px;
     max-width: 100%;
   }
   .active{
