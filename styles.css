@@ -475,6 +475,144 @@ background-color: var(--another-color);
 #about-section a i{
   margin: auto 7px;
 }
+ .values-container {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #0a1e3c;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #3a4f6d;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* ----- 3-COLUMN GRID – fully responsive ----- */
+        .vision-mission-values {
+          background-color: white;
+            display: grid;
+            padding: 20px 70px 70px 70px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        /* ----- CARD STYLING (clean, modern, accessible) ----- */
+        .carder {
+            background: white;
+            font-family: var(--font-2);
+            padding: 2.2rem 1.8rem 1rem 1.8rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 35px -8px rgba(0, 20, 45, 0.404), 0 8px 12px -6px rgba(0,0,0,0.02);
+            transition: all 0.25s ease;
+            border: 1px solid rgba(255, 255, 255, 0.055);
+            backdrop-filter: blur(2px);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        
+
+        /* icon circle – unified style with distinct brand colors */
+        .icon-wrapper {
+            width: 72px;
+            height: 72px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.8rem;
+            font-size: 2.2rem;
+            color: white;
+            transition: 0.2s;
+        }
+
+        .carder:hover .icon-wrapper {
+            scale: 1.03;
+        }
+
+        /* VISION icon – compass / eye (foresight) */
+        .icon-vision {
+            background: var(--main-color);
+            box-shadow: 0 12px 18px -8px rgba(37, 99, 235, 0.3);
+        }
+
+        /* MISSION icon – bullseye / target (purpose) */
+        .icon-mission {
+            background: #003062;
+            box-shadow: 0 12px 18px -8px rgba(124, 58, 237, 0.3);
+        }
+
+        /* VALUES icon – shield (integrity, protection) */
+        .icon-values {
+            background: #012041;
+            box-shadow: 0 12px 18px -8px rgba(15, 118, 110, 0.3);
+        }
+
+        /* typography inside cards */
+        .carder h3 {
+            font-size: 1.8rem;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+            color: #0b2a4a;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .carder p {
+            color: #012041;
+            font-size: 1.05rem;
+            margin-bottom: 1.6rem;
+            flex-grow: 1;
+        }
+
+        /* tiny decorative list for values – clean checkmarks */
+        .values-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.4rem;
+        }
+
+        .values-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.85rem;
+            font-weight: 450;
+            color: #012041;
+        }
+
+        .values-list i {
+            color: var(--another-color);
+            font-size: 1.1rem;
+            width: 1.4rem;
+            text-align: center;
+            font-weight: 900;
+        }
+
+        /* subtle accent border */
+        .card-border {
+            width: 50px;
+            height: 4px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            margin-top: 0.8rem;
+            transition: 0.2s;
+        }
+
+        .carder:hover .card-border {
+            background: #2563eb;
+            width: 70px;
+        }
 #categories {
     padding: 60px 5%;
     background: rgb(235, 235, 235);
@@ -995,6 +1133,19 @@ background-color: #012041;
     color: #fff;
     font-size: clamp(18px, 2.5vw, 27px);
 }
+
+
+@media screen and (max-width: 1024px) {
+            .vision-mission-values {
+                gap: 1.5rem;
+            }
+            .card {
+                padding: 1.8rem 1.5rem;
+            }
+            .card h3 {
+                font-size: 1.6rem;
+            }
+        }
 @media(max-width:800px){
   .hero-text-container{
     padding: 20px 30px;
@@ -1020,6 +1171,10 @@ background-color: #012041;
     margin-top: 2px;
     font-size: var(--big-font);
   }
+   .vision-mission-values {
+                grid-template-columns: repeat(2, 1fr);  /* tablet: 2 columns */
+            }
+  
 }
 
 @media screen and (max-width: 600px) {
@@ -1057,6 +1212,29 @@ background-color: #012041;
     letter-spacing: 0.7px;
     font-size: clamp(35px, 8vw, 45px);
   }
+   .vision-mission-values {
+                grid-template-columns: 1fr;  /* mobile: stacked */
+                gap: 1.4rem;
+                padding: 20px 20px 70px 20px;
+            }
+            
+          
+            
+            .carder {
+                padding: 2rem 1rem;
+                border-radius: 20px;
+            }
+            
+            .section-header h2 {
+                font-size: 1.9rem;
+            }
+            
+            .icon-wrapper {
+                width: 64px;
+                height: 64px;
+                font-size: 1.9rem;
+                border-radius: 20px;
+            }
   #team p{
     font-size: var(--big-font);
   }
