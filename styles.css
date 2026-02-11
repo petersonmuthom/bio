@@ -541,20 +541,20 @@ background-color: var(--another-color);
 
         /* VISION icon – compass / eye (foresight) */
         .icon-vision {
-            background: var(--main-color);
-            box-shadow: 0 12px 18px -8px rgba(37, 99, 235, 0.3);
+            background: #003062;
+           
         }
 
         /* MISSION icon – bullseye / target (purpose) */
         .icon-mission {
-            background: #003062;
-            box-shadow: 0 12px 18px -8px rgba(124, 58, 237, 0.3);
+            background: var(--main-color);
+            
         }
 
         /* VALUES icon – shield (integrity, protection) */
         .icon-values {
             background: #012041;
-            box-shadow: 0 12px 18px -8px rgba(15, 118, 110, 0.3);
+            
         }
 
         /* typography inside cards */
