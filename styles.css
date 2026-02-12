@@ -74,6 +74,7 @@ header{
     justify-content: space-between;
 }
 .logo img {
+  margin-top: 7px;
   border-radius: 5px;
     height: 70px; 
     max-width: 100%;
@@ -253,8 +254,8 @@ header{
   padding: 0px 70px 40px 70px;
 }
 .hero-text-container{
-  border-radius: 12px;
-  border: 1px solid rgba(128, 128, 128, 0.297);
+  border-radius: 20px;
+  border: 1px solid #002f624f;
   background-color: #ffffffb0;
     padding: 20px 40px 20px 40px;
     width: 70%;
@@ -317,7 +318,7 @@ header{
   background: white;
   padding: 20px;
   border-radius: 12px;
-  border: 1px solid rgba(128, 128, 128, 0.297);
+  border: 1px solid #002f624f;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -510,13 +511,14 @@ background-color: var(--another-color);
             font-family: var(--font-2);
             padding: 2.2rem 1.8rem 1rem 1.8rem;
             border-radius: 20px;
-            box-shadow: 0 20px 35px -8px rgba(0, 20, 45, 0.404), 0 8px 12px -6px rgba(0,0,0,0.02);
+            box-shadow: 0 20px 35px -8px rgba(0, 20, 45, 0.096), 0 8px 12px -6px rgba(0,0,0,0.02);
             transition: all 0.25s ease;
             border: 1px solid rgba(255, 255, 255, 0.055);
             backdrop-filter: blur(2px);
             display: flex;
             flex-direction: column;
             height: 100%;
+            border: 1px solid #002f624f;
         }
 
         
@@ -541,7 +543,7 @@ background-color: var(--another-color);
 
         /* VISION icon – compass / eye (foresight) */
         .icon-vision {
-            background: #003062;
+            background: #408500;
            
         }
 
@@ -553,7 +555,7 @@ background-color: var(--another-color);
 
         /* VALUES icon – shield (integrity, protection) */
         .icon-values {
-            background: #012041;
+            background: var(--main-color);
             
         }
 
@@ -591,7 +593,7 @@ background-color: var(--another-color);
         }
 
         .values-list i {
-            color: var(--another-color);
+            color: var(--main-color);
             font-size: 1.1rem;
             width: 1.4rem;
             text-align: center;
@@ -612,103 +614,218 @@ background-color: var(--another-color);
             background: #2563eb;
             width: 70px;
         }
-#categories {
-    padding: 60px 5%;
-    background: rgb(235, 235, 235);
-    text-align: center;
+
+
+
+
+
+#why{
+  padding: 20px 70px;
+  font-family: var(--font-2);
+  background-color: whitesmoke;
 }
 
-#categories h1 {
-    margin-bottom: 40px;
-    font-size: var(--bigger-font);
+      h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 40px;
+      letter-spacing: -0.01em;
+      color: var(--another-color);
+      position: relative;
+    }
+
+    h2 i {
+      color: var(--main-color);
+      margin-right: 10px;
+    }
+
+    .grid-2col, .grid-3col, .grid-4col, .discipline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+    }
+
+    .badge-item {
+      background: white;
+      padding: 4px 0px 4px 0px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+      box-shadow: 0 2px 6px rgba(0,40,40,0.04);
+    }
+
+    .badge-item i {
+      color: var(--main-color);
+      font-size: 0.9rem;
+    }
+
+    /* cards */
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: 0 8px 24px rgba(0,65,80,0.04);
+      transition: all 0.2s ease;
+      border: 1px solid #002f624f;
+    }
+
+
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--another-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+     .card h3 i{
+      color: #408500;
+    }
+    .card ul {
+      list-style: none;
+    }
+
+    .card li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 0.98rem;
+      color: #1f3f4f;
+    }
+
+    .card li i {
+      color: #0e7c5e;
+      font-size: 0.8rem;
+      margin-top: 5px;
+    }
+
+
+#services{
+  font-family: var(--font-2);
+  padding: 20px 70px;
+  background-color: whitesmoke;
+}
+    .discipline-section {
+      background: white;
+      border: 1px solid #002f624f;
+      border-radius: 32px;
+      padding: 32px 32px;
+      margin-bottom: 36px;
+    }
+
+    .discipline-section h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--another-color);
+      margin-bottom: 28px;
+      padding-left: 20px;
+    }
+
+    .compact-tags {
+      align-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .compact-tag {
+      background: whitesmoke;
+      padding: 10px 18px;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #003062;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      border: 1px solid #002f622c;
+      transition: 0.1s ease;
+    }
+
+    .compact-tag i {
+      margin-right: 8px;
+      color: #408500;
+    }
+
+    .two-col-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .impact-highlight {
+      background: linear-gradient(145deg, #ffffff, #f3faf8);
+      border-radius: 24px;
+      padding: 32px;
+      border: 1px solid #d7ede5;
+    }
+
+
+
+#cpd{
+  padding: 20px 70px 70px 70px;
+  font-family: var(--font-2);
+  background-color: whitesmoke;
+}
+#cpd h2{
+    margin-top: 70px;
+  font-size: 2rem;
     font-family: var(--font-2);
     font-weight: 800;
     color: var(--another-color);
     text-align: center;
     justify-content: center;
 }
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  padding-bottom: 0px;
-}
-.category-card {
-    border: 1px solid #00000034;
-    background: #fff;
-    border-radius: 10px;
-    padding: 30px 20px 30px 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.096);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-.category-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.486);
-}
-.category-card .icon {
-    color: var(--main-color);
-  font-size: 36px;
-  margin-bottom: 15px;
-}
-.category-card h3 {
-    margin-bottom: 10px;
-    text-align: center;
-    color: #011730;
-    font-size: clamp(24px, 6vw, 26px);
-    letter-spacing: 2px;
-    font-family: var(--font-2);
-}
-.category-card p {
-    color: #000000bb;
-    text-align: center;
-    letter-spacing: 2px;
-    font-size: var(--big-font);
-    font-family: var(--font-2);
-}
-#impact-section{
-  background-color: #012041;
-  padding: 40px 80px;
-}
-.impact-container{
-  text-align: center;
-background-color: #012041;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  padding: 10px 0px;
+    .cpd-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 28px;
+      border-left: 6px solid #408500;
+      box-shadow: 0 8px 18px rgba(0,60,70,0.04);
+    }
+
+    .btn {
+      background: #0b6e4f;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      border: none;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+
+ 
+
+
+
+#ourwork{
+  font-family: var(--font-2);
+  padding: 20px 70px 70px 70px;
+ background-color: white; 
 }
 
-.impact-tte{
-    margin-bottom: 30px;
-    font-size: var(--bigger-font);
-    font-family: var(--font-2);
-    font-weight: 800;
-    color: #fff;
-    text-align: center;
-    justify-content: center;
-}
-.impact h1{
-  margin-bottom: 0px;
-  color: var(--main-color);
-  font-size: clamp(24px, 6vw, 26px);
-  letter-spacing: 2px;
-  font-family: var(--font-2);
-}
-.impact h1 i{
-  font-size: 2.7rem;
-  margin-bottom: 20px;
-}
-.impact p{
-  color: #ffffff;
-   letter-spacing: 1px;
-   font-weight: 400;
-    font-size: var(--big-font);
-    font-family: var(--font-2);
-}
+
+
+
+
+
 #programs{
-    background-color: whitesmoke;
-    padding: 2px 5% 30px 5%;
+    background-color: white;
+    padding: 20px 70px 20px 70px;
 }
 #programs h1{
   margin-top: 70px;
@@ -727,10 +844,10 @@ background-color: #012041;
     gap: 20px;
 }
 .p-card{
-  border-radius: 12px;
-    background: #dadada;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.338);
-    border: 1px solid rgba(128, 128, 128, 0.297);
+  border-radius: 20px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.103);
+     border: 1px solid #002f624f;
     display: flex;
     flex-direction: column;
 }
@@ -755,32 +872,32 @@ background-color: #012041;
     line-height: 1;
     flex-grow: 1;
 }
-.p-card .cta{
-  border-radius: 6px;
-    align-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto 10px auto;
-    font-family: var(--font-family);
-    background: var(--main-color);
-    color: #000;
-    text-align: center;
-    padding: 14px;
-    width: 90%;
-    font-weight: 700;
-    font-size: var(--big-font);
-    text-decoration: none;
-    transition: background 0.3s ease;
+.cta{
+ border-radius: 6px;
+  display: flex;
+  padding: 10px 40px;
+  font-weight: 700;
+  color: #000;
+  justify-content: center;
+  text-align: center;
+  width: 48%;
+  margin: 0px auto 20px auto;
+  background-color: var(--main-color);
+  font-size: var(--big-font);
+  font-family: var(--font-2);
+}
+.cta i{
+  margin: auto 4px;
 }
 #team{
-    padding: 20px 70px 60px 70px;
+    padding: 40px 70px 0px 70px;
     background-color: whitesmoke;
 }
 #team-tte{
-    margin-bottom: 30px;
-    font-size: var(--bigger-font);
+
+    font-size: 2rem;
     font-family: var(--font-2);
-    font-weight: 800;
+    font-weight: 900;
     color: var(--another-color);
     text-align: center;
     justify-content: center;
@@ -795,15 +912,15 @@ background-color: #012041;
         text-align: center;
 }
 .team-grid {
-    padding: 70px 0px;
+    padding: 20px 0px 70px 0px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
 }
 .team-card  {
-   border-radius: 12px;
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.298);
-   border: 1px solid rgba(128, 128, 128, 0.297);
+   border-radius: 20px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.075);
+   border: 1px solid #002f624f;
     background: #fff;
     padding: 30px 20px;
     text-align: center;
@@ -821,7 +938,7 @@ background-color: #012041;
 #hero-names{
     margin-bottom: 10px;
     text-align: center;
-    color: #011730;
+    color: #003062;
     font-size: var(--bigger-font);
     letter-spacing: 1px;
     font-family: var(--font-2);
@@ -867,7 +984,7 @@ background-color: #012041;
 
 
 #faqs{
-  padding: 40px 10px 70px 10px;
+  padding: 50px 10px 70px 10px;
   background-color: #fff;
 }
 #faqs h1{
@@ -1159,20 +1276,16 @@ background-color: #012041;
   .after-section {
     gap: 10px 0px;
   }
-  .stats-container{
-    margin: 20px 0;
-    padding: 0 -20px;
+   #why{
+  padding: 20px 50px;
+}
+  .vision-mission-values {
+    grid-template-columns: repeat(2, 1fr);  /* tablet: 2 columns */
   }
-  .stats-container i{
-    font-size: 2rem;
+  .two-col-layout {
+    grid-template-columns: 1fr;
   }
-  .stats-container h4{
-    margin-top: 2px;
-    font-size: var(--big-font);
-  }
-   .vision-mission-values {
-                grid-template-columns: repeat(2, 1fr);  /* tablet: 2 columns */
-            }
+
   
 }
 
@@ -1213,6 +1326,7 @@ background-color: #012041;
     font-size: clamp(35px, 8vw, 45px);
   }
   .abt-txt{
+    padding: 0 24px;
     text-align: left;
   }
    .vision-mission-values {
@@ -1237,7 +1351,31 @@ background-color: #012041;
                 height: 64px;
                 font-size: 1.9rem;
                 border-radius: 20px;
-            }
+  }
+  #why{
+  padding: 20px 20px;
+}
+#services{
+  padding: 20px 20px;
+}
+ .discipline-section {
+      border-radius: 20px;
+      padding: 20px 20px;
+      margin-bottom: 36px;
+    }
+    .compact-tag {
+      font-size: 0.9rem;
+    }
+    
+#corousel{
+  padding: 20px 20px;
+}
+#cpd{
+  padding: 20px 20px 70px 20px;
+}
+#ourwork{
+  padding: 20px 20px 70px 20px;
+}
   #team p{
     font-size: var(--big-font);
   }
@@ -1347,19 +1485,7 @@ font-size: var(--big-font);
   #impact-section{
     padding: 70px 10px;
   }
-    #categories {
-      padding: 30px 5% 40px 5%;
-    }
- 
-    .category-grid{
-        padding-bottom: 10px;
-    }
-    
-    .cta-buttonn{
-      margin: 7px;
-      padding: 4px;
-      font-size: var(--big-font);
-    }
+
     #programs{
         padding: 20px 30px 0px 30px;
     }
