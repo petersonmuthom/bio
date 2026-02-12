@@ -435,6 +435,7 @@ background-color: var(--another-color);
     padding: 80px 100px 100px 100px;
 }
 .abt-tte{
+
     margin-bottom: 0px;
     font-size: var(--bigger-font);
     font-family: var(--font-2);
@@ -444,7 +445,7 @@ background-color: var(--another-color);
     justify-content: center;
 }
 #about-section img{
-  margin: 0px auto -30px auto;
+  margin: -3px auto -30px auto;
   align-items: center;
   justify-content: center;
    height: 340px; 
@@ -461,13 +462,13 @@ background-color: var(--another-color);
 #about-section a{
   border-radius: 6px;
   display: flex;
-  padding: 10px 10px;
+  padding: 10px 0px;
   font-weight: 700;
   color: #000;
   justify-content: center;
   text-align: center;
-  width: 200px;
-  margin: 30px auto 0px auto;
+  width: 20%;
+  margin: 40px auto 0px auto;
   background-color: var(--main-color);
   font-size: var(--big-font);
   font-family: var(--font-2);
@@ -1326,9 +1327,23 @@ background-color: var(--another-color);
     font-size: clamp(35px, 8vw, 45px);
   }
   .abt-txt{
-    padding: 0 24px;
+    padding: 0 22px;
     text-align: left;
   }
+  #about-section a{
+  border-radius: 6px;
+  display: flex;
+  padding: 10px 0px;
+  font-weight: 700;
+  color: #000;
+  justify-content: center;
+  text-align: center;
+  width: 40%;
+  margin: 40px 0 0px 20px;
+  background-color: var(--main-color);
+  font-size: var(--big-font);
+  font-family: var(--font-2);
+}
    .vision-mission-values {
                 grid-template-columns: 1fr;  /* mobile: stacked */
                 gap: 1.4rem;
@@ -1363,7 +1378,8 @@ background-color: var(--another-color);
       padding: 20px 20px;
       margin-bottom: 36px;
     }
-    .compact-tag {
+    .compact-tags {
+      padding: 4px 4px;
       font-size: 0.9rem;
     }
     
@@ -1480,7 +1496,7 @@ background-color: var(--another-color);
     padding: 40px 20px 40px 20px;
   }
   .abt-txt{
-font-size: var(--big-font);
+font-size: 1rem;
   }
   #impact-section{
     padding: 70px 10px;
