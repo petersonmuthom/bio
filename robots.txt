@@ -1,0 +1,19 @@
+# =========================================
+# Biostrength Kenya - Robots.txt
+# =========================================
+
+# Apply to all search engines
+User-agent: *
+
+# Block sensitive or non-public pages
+Disallow: /login.html
+Disallow: /signup.html
+Disallow: /private/
+Disallow: /admin/
+Disallow: /cgi-bin/
+
+# Allow all other pages
+Allow: /
+
+# Sitemap location
+Sitemap: https://biostrengthkenyalimited.com/sitemap.xml
