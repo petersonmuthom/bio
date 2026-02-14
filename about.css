@@ -27,6 +27,7 @@ header{
     z-index: 1000;
 }
 .header-1{
+  display: none;
   padding: 4px;
     font-family: sans-serif;
     text-align: center;
@@ -73,8 +74,10 @@ header{
     justify-content: space-between;
 }
 .logo img {
+    margin-top: 7px;
+  border-radius: 5px;
     height: 70px; 
-    max-width: 100%;
+    max-width: 100%
 }
 .header-cta {
     display: flex;
@@ -409,7 +412,7 @@ header{
         font-size: var(--big-font);
         color: #011730;
   line-height: 1.4; 
-        text-align: center;
+        text-align: left;
   }
 }
 @media screen and (max-width: 600px) {
