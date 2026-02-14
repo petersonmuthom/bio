@@ -1463,6 +1463,9 @@ background-color: var(--another-color);
     font-weight: 900;
     letter-spacing: -2px;
 }
+#hero-section{
+  padding-top: 130px;
+}
    .hero-text{
   padding: 0px 20px 40px 20px;
 }
