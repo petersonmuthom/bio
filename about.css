@@ -117,7 +117,7 @@ header{
   background-color: #012041;
   font-family: var(--font-2);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.795);
-  padding: 0 40px;
+  padding: 0 60px;
 }
 
 .topnav a {
@@ -303,8 +303,11 @@ header{
     -webkit-background-clip: text;-webkit-text-fill-color: transparent;
 }
 .footer-col img{
-  height: 70px;
-  max-width: 100%;
+
+     margin-top: 7px;
+  border-radius: 5px;
+    height: 70px; 
+    max-width: 100%
 }
 
 .footer-col a:hover {

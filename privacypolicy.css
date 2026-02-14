@@ -227,7 +227,7 @@ header{
      font-family: var(--font-2);
         font-size: var(--big-font);
         color: #011730;
-  line-height: 1.4; 
+        letter-spacing: normal;
         text-align: left;
 }
 .abt-txt span{
@@ -303,8 +303,10 @@ header{
     -webkit-text-fill-color: transparent;
 }
 .footer-col img{
-  height: 70px;
-  max-width: 100%;
+     margin-top: 7px;
+  border-radius: 5px;
+    height: 70px; 
+    max-width: 100%
 }
 
 .footer-col a:hover {
