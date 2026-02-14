@@ -626,14 +626,15 @@ background-color: var(--another-color);
   background-color: whitesmoke;
 }
 
-      h2 {
-      font-size: 2rem;
-      font-weight: 900;
-      text-align: center;
+ h2{
+       font-size: var(--bigger-font);
+    font-family: var(--font-2);
+    font-weight: 800;
+    color: var(--another-color);
+    text-align: center;
+    justify-content: center;
       margin-bottom: 40px;
-      letter-spacing: -0.01em;
-      color: var(--another-color);
-      position: relative;
+      
     }
 
     h2 i {
@@ -678,16 +679,10 @@ background-color: var(--another-color);
       transition: all 0.2s ease;
       border: 1px solid #002f624f;
     }
-
-
-    .card h3 {
-      font-size: 1.3rem;
+    .whyh3{
+      font-size: 1.5rem;
       font-weight: 600;
-      margin-bottom: 16px;
       color: var(--another-color);
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
      .card h3 i{
       color: #408500;
@@ -779,7 +774,8 @@ background-color: var(--another-color);
 }
 #cpd h2{
     margin-top: 70px;
-  font-size: 2rem;
+
+    font-size: var(--bigger-font);
     font-family: var(--font-2);
     font-weight: 800;
     color: var(--another-color);
@@ -815,7 +811,7 @@ background-color: var(--another-color);
 
 #ourwork{
   font-family: var(--font-2);
-  padding: 20px 70px 70px 70px;
+  padding: 40px 70px 70px 70px;
  background-color: white; 
 }
 
@@ -1372,6 +1368,10 @@ background-color: var(--another-color);
   #why{
   padding: 20px 20px;
 }
+ .whyh3{
+      font-size: 1rem;
+
+    }
 #services{
   padding: 20px 20px;
 }

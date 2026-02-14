@@ -54,10 +54,10 @@
                 <div class="dropdown-content">
                     <a href="#about-section"><i class="fa-solid fa-angle-right"></i> WHO WE ARE</a>
                     <a href="about.html#about-section"><i class="fa-solid fa-angle-right"></i> MORE ABOUT US</a>
-                    <a href="#categories"><i class="fa-solid fa-angle-right"></i> OUR WORK</a>
+                    <a href="#ourwork"><i class="fa-solid fa-angle-right"></i> OUR WORK</a>
                 </div>
             </div> 
-            <a href="#programs">PROGRAMS</a>
+            <a href="#cta-webinars">PROGRAMS</a>
             <a href="#team">OUR TEAM</a>
             <a href="#contact-section">CONTACT US</a>
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()"><i class="fa-solid fa-bars"></i></a>
@@ -183,23 +183,23 @@
       <h2>Why Us?</h2>
       <div class="grid-2col" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
         <div class="card">
-          <h3><i class="fas fa-check-circle"></i> Proven Track Record</h3>
+          <h3 class="whyh3"><i class="fas fa-check-circle"></i> Proven Track Record</h3>
           <p style="color: #2a4a5a; font-size: 1.05rem;">Demonstrated success across diverse laboratory settings and regions.</p>
         </div>
         <div class="card">
-          <h3><i class="fas fa-user-tie"></i> Expert-Led Team</h3>
+          <h3 class="whyh3"><i class="fas fa-user-tie"></i> Expert-Led Team</h3>
           <p style="color: #2a4a5a;">Highly qualified, certified, and experienced professionals with global exposure.</p>
         </div>
         <div class="card">
-          <h3><i class="fas fa-rocket"></i> Rapid, Agile Implementation</h3>
+          <h3 class="whyh3"><i class="fas fa-rocket"></i> Rapid, Agile Implementation</h3>
           <p style="color: #2a4a5a;">Ability to interpret and implement guidelines swiftly and effectively.</p>
         </div>
         <div class="card">
-          <h3><i class="fas fa-coins"></i> Competitive & Transparent Pricing</h3>
+          <h3 class="whyh3"><i class="fas fa-coins"></i> Competitive & Transparent Pricing</h3>
           <p style="color: #2a4a5a;">Exceptional value without compromising on quality.</p>
         </div>
         <div class="card">
-          <h3><i class="fas fa-globe-asia"></i> Global Insights, Local Relevance</h3>
+          <h3 class="whyh3"><i class="fas fa-globe-asia"></i> Global Insights, Local Relevance</h3>
           <p style="color: #2a4a5a;">International expertise applied to regional contexts for sustainable impact.</p>
         </div>
       </div>
@@ -308,16 +308,6 @@
       padding: 0 32px;
     }
 
-    /* header / brand (minimal for carousel context) */
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 0 24px;
-      border-bottom: 2px solid #e6f0fa;
-      margin-bottom: 24px;
-    }
-
     .logo {
       font-size: 1.8rem;
       font-weight: 700;
@@ -340,12 +330,13 @@
     }
     /* section title */
     #corousel h2 {
-      font-size: 2rem;
-      font-weight: 900;
-      margin-bottom: 40px;
-      color: #003062;
-      text-align: center;
-      gap: 12px;
+     margin-bottom: 13px;
+    font-size: var(--bigger-font);
+    font-family: var(--font-2);
+    font-weight: 800;
+    color: var(--another-color);
+    text-align: center;
+    justify-content: center;
     }
 
 
