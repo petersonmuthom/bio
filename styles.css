@@ -1194,8 +1194,10 @@ background-color: var(--another-color);
     -webkit-text-fill-color: transparent;
 }
 .footer-col img{
-  height: 70px;
-  max-width: 100%;
+    margin-top: 7px;
+  border-radius: 5px;
+    height: 70px; 
+    max-width: 100%
 }
 
 .footer-col a:hover {
